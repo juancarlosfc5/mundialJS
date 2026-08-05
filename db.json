@@ -399,7 +399,98 @@
       "coach": ""
     }
   ],
-  "players": [],
+  "players": [
+    {
+    "id": "player-mex-09",
+    "teamId": "team-mex",
+    "name": "Santiago Ramírez",
+    "number": 9,
+    "position": "Delantero",
+    "age": 26,
+    "active": true
+  },
+  {
+    "id": "player-kor-10",
+    "teamId": "team-kor",
+    "name": "Min-jun Park",
+    "number": 10,
+    "position": "Mediocampista",
+    "age": 25,
+    "active": true
+  },
+  {
+    "id": "player-can-11",
+    "teamId": "team-can",
+    "name": "Noah Tremblay",
+    "number": 11,
+    "position": "Delantero",
+    "age": 24,
+    "active": true
+  },
+  {
+    "id": "player-usa-09",
+    "teamId": "team-usa",
+    "name": "Ethan Miller",
+    "number": 9,
+    "position": "Delantero",
+    "age": 27,
+    "active": true
+  },
+  {
+    "id": "player-hai-07",
+    "teamId": "team-hai",
+    "name": "Jean Baptiste",
+    "number": 7,
+    "position": "Mediocampista",
+    "age": 23,
+    "active": true
+  },
+  {
+    "id": "player-bra-10",
+    "teamId": "team-bra",
+    "name": "Lucas Ferreira",
+    "number": 10,
+    "position": "Mediocampista",
+    "age": 25,
+    "active": true
+  },
+  {
+    "id": "player-qat-11",
+    "teamId": "team-qat",
+    "name": "Khalid Al Noor",
+    "number": 11,
+    "position": "Delantero",
+    "age": 26,
+    "active": true
+  },
+  {
+    "id": "player-civ-09",
+    "teamId": "team-civ",
+    "name": "Yann Koffi",
+    "number": 9,
+    "position": "Delantero",
+    "age": 24,
+    "active": true
+  },
+  {
+    "id": "player-ger-10",
+    "teamId": "team-ger",
+    "name": "Leon Wagner",
+    "number": 10,
+    "position": "Mediocampista",
+    "age": 27,
+    "active": true
+  },
+  {
+    "id": "player-ned-11",
+    "teamId": "team-ned",
+    "name": "Daan de Jong",
+    "number": 11,
+    "position": "Delantero",
+    "age": 25,
+    "active": true
+  }
+  ],
   "matches": [
     {
       "id": "match-01",
@@ -1194,5 +1285,86 @@
       "status": "scheduled"
     }
   ],
-  "goals": []
+  "goals": [
+    {
+    "id": "goal-001",
+    "matchId": "match-01",
+    "teamId": "team-mex",
+    "playerId": "player-mex-09",
+    "minute": 18,
+    "type": "Jugada"
+  },
+  {
+    "id": "goal-002",
+    "matchId": "match-02",
+    "teamId": "team-kor",
+    "playerId": "player-kor-10",
+    "minute": 34,
+    "type": "Tiro libre"
+  },
+  {
+    "id": "goal-003",
+    "matchId": "match-03",
+    "teamId": "team-can",
+    "playerId": "player-can-11",
+    "minute": 51,
+    "type": "Jugada"
+  },
+  {
+    "id": "goal-004",
+    "matchId": "match-04",
+    "teamId": "team-usa",
+    "playerId": "player-usa-09",
+    "minute": 63,
+    "type": "Penal"
+  },
+  {
+    "id": "goal-005",
+    "matchId": "match-05",
+    "teamId": "team-hai",
+    "playerId": "player-hai-07",
+    "minute": 27,
+    "type": "Jugada"
+  },
+  {
+    "id": "goal-006",
+    "matchId": "match-07",
+    "teamId": "team-bra",
+    "playerId": "player-bra-10",
+    "minute": 39,
+    "type": "Jugada"
+  },
+  {
+    "id": "goal-007",
+    "matchId": "match-08",
+    "teamId": "team-qat",
+    "playerId": "player-qat-11",
+    "minute": 72,
+    "type": "Cabeza"
+  },
+  {
+    "id": "goal-008",
+    "matchId": "match-09",
+    "teamId": "team-civ",
+    "playerId": "player-civ-09",
+    "minute": 44,
+    "type": "Jugada"
+  },
+  {
+    "id": "goal-009",
+    "matchId": "match-10",
+    "teamId": "team-ger",
+    "playerId": "player-ger-10",
+    "minute": 58,
+    "type": "Tiro libre"
+  },
+  {
+    "id": "goal-010",
+    "matchId": "match-11",
+    "teamId": "team-ned",
+    "playerId": "player-ned-11",
+    "minute": 81,
+    "type": "Jugada"
+  }
+  ]
 }
