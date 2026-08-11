@@ -1,4 +1,3 @@
-// Punto de entrada general de la aplicación.
-import "./pages/matches.js"; // Importa el módulo de la página de partidos
-import "./services/matchesService.js"; // Importa el módulo de servicios de la API
-import "../components/create-matches.js"; // Importa el componente de creación de partidos
+// Punto de entrada: el Web Component contiene toda la interfaz de la aplicación.
+// No se importa pages/matches.js ni matchesService.js en esta versión.
+import '../components/create-matches.js';

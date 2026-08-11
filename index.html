@@ -2,24 +2,14 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/views/styles.css" />
-    <title>mundial-js</title>
+    <script type="module" src="/src/js/app.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="/src/assets/javascript.svg" />
+    <title>Mundial JS</title>
   </head>
   <body>
-    <nav aria-label="Navegación principal">
-      <a href="#grupos">Grupos</a>
-      <a href="#equipos">Equipos</a>
-      <a href="#jugadores">Jugadores</a>
-      <a href="/src/views/matches.html">Partidos</a>
-      <a href="#goles">Goles</a>
-    </nav>
-
-    <!-- Web Component reutilizable para registrar partidos con Shadow DOM. -->
+    <!-- Toda la interfaz (navbar, partidos y modal) pertenece a este Web Component. -->
     <create-matches></create-matches>
 
-    <script type="module" src="/src/js/app.js" defer></script>
-    <script type="module" src="/src/components/create-matches.js" defer></script>
   </body>
 </html>
