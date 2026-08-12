@@ -1,5 +1,6 @@
 // Importación normal: Vite carga create-matches.css como una hoja de estilos real.
 import './create-matches.css';
+import { postMatch } from '../api/matchesApi.js';
 
 // Web Component que reúne el navbar, el formulario y el modal de partidos.
 export class CreateMatches extends HTMLElement {
@@ -83,12 +84,23 @@ export class CreateMatches extends HTMLElement {
       const datosDelPartido = Object.fromEntries(new FormData(formulario).entries());
       datosDelPartido.matchNumber = Number(datosDelPartido.matchNumber);
 
-      const partidoCreado = await this.crearPartidoAsincronico(datosDelPartido);
-      console.log('Partido creado desde Web Component:', partidoCreado);
-      formulario.reset();
-      modal.hidden = true;
-      mensajeConfirmacion.textContent = 'El partido se creó correctamente.';
-      mensajeConfirmacion.hidden = false;
+      try {
+        const partidoCreado = await this.crearPartidoAsincronico(datosDelPartido);
+
+        if (!partidoCreado) {
+          throw new Error('La API no confirmó la creación. Revise la consola.');
+        }
+
+        console.log('Partido creado desde Web Component:', partidoCreado);
+        formulario.reset();
+        modal.hidden = true;
+        mensajeConfirmacion.textContent = 'El partido se creó correctamente.';
+        mensajeConfirmacion.hidden = false;
+      } catch (error) {
+        // La API ya informa el código HTTP; este mensaje llega también a la pantalla.
+        mensajeConfirmacion.textContent = `No fue posible crear el partido: ${error.message}`;
+        mensajeConfirmacion.hidden = false;
+      }
     });
   }
 
@@ -122,13 +134,10 @@ export class CreateMatches extends HTMLElement {
     };
   }
 
-  // Simula el guardado asíncrono sin depender de pages/matches.js.
+  // Envía el partido a JSON Server (dev) o MockAPI (prod), según .env.
   async crearPartidoAsincronico(datos) {
     const partido = this.construirPartido(datos);
-
-    return await new Promise((resolver) => {
-      setTimeout(() => resolver(partido), 1000);
-    });
+    return await postMatch(partido);
   }
 }
 
