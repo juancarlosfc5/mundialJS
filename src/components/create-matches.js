@@ -122,6 +122,7 @@ export class CreateMatches extends HTMLElement {
     this.validarDatosDelPartido(datos);
 
     return {
+      // Identificador propio del partido, compatible con los registros existentes.
       id: `match-${String(datos.matchNumber).padStart(2, '0')}`,
       matchNumber: datos.matchNumber,
       groupId: datos.groupId,

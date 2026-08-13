@@ -1,5 +1,5 @@
 // Cambia VITE_APP_ENV entre "dev" y "prod" en .env para seleccionar la API.
-const URL_API = import.meta.env.VITE_APP_ENV === 'dev'
+const URL_API = import.meta.env.VITE_APP_ENV === 'prod'
   ? import.meta.env.VITE_PROD_API_URL
   : import.meta.env.VITE_DEV_API_URL;
 
