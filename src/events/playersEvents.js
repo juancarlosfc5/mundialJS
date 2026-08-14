@@ -1,12 +1,20 @@
-// src/events/players.events.js
-import { listPlayers, updatePlayer, deletePlayer } from "../services/players.js";
-import { renderPlayersView } from "../views/players.js";
-import { db } from "../database.js";
+import { createPlayer, deletePlayer } from '../services/playersService.js';
+import { createPlayerRow } from '../views/playersView.js';
 
-// ─── ESTADO INTERNO DE LOS FILTROS ────────────────────────
-let currentTeamFilter = "";
-let currentPositionFilter = "";
-let currentSearchTerm = "";
+// Grupo 3 - Manejadores de Eventos del Módulo de Jugadores
+
+// ==========================================
+// Funciones asignadas a Jose (Filtros y Consultas)
+// ==========================================
+// Jose implementará:
+// - handleTeamFilterChange (filtrado dinámico por equipo con evento change)
+// - handlePlayerRowHover (resaltado interactivo con mouseover y mouseout)
+// - setupPlayerFilterEvents (inicializador de eventos de consulta)
+
+
+// ==========================================
+// Funciones asignadas a Manuel (Mutaciones CRUD)
+// ==========================================
 
 /**
  * Filtra la lista de jugadores aplicando equipo, posición y búsqueda de forma combinada.

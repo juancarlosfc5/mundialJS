@@ -7,7 +7,54 @@ const POSICIONES_PERMITIDAS = ['Portero', 'Defensa', 'Mediocampista', 'Delantero
 // ==========================================
 // Funciones asignadas a Jose (Lecturas / Consultas)
 // ==========================================
-// Jose implementará: listPlayers, getPlayerById, getPlayersByTeam
+
+/**
+ * Retorna una promesa con la lista completa de todos los jugadores.
+ * Se devuelve una copia independiente de cada objeto para garantizar inmutabilidad.
+ * @returns {Promise<Array<Object>>} Lista de copias de jugadores.
+ */
+export const listPlayers = async () => {
+  return database.players.map((p) => ({ ...p }));
+};
+
+/**
+ * Busca un jugador por su ID único.
+ * @param {string} playerId - Identificador del jugador.
+ * @returns {Promise<Object>} Copia del jugador encontrado.
+ * @throws {Error} Si el playerId no es válido o no existe.
+ */
+export const getPlayerById = async (playerId) => {
+  if (!playerId || typeof playerId !== 'string') {
+    throw new Error('El ID del jugador es obligatorio.');
+  }
+
+  const player = database.players.find((p) => p.id === playerId);
+  if (!player) {
+    throw new Error('Jugador no encontrado.');
+  }
+
+  return { ...player };
+};
+
+/**
+ * Valida la existencia de un equipo y retorna todos los jugadores asociados.
+ * @param {string} teamId - Identificador del equipo.
+ * @returns {Promise<Array<Object>>} Lista de copias de jugadores del equipo.
+ * @throws {Error} Si el equipo no existe en la base de datos.
+ */
+export const getPlayersByTeam = async (teamId) => {
+  if (!teamId || typeof teamId !== 'string') {
+    throw new Error('El ID del equipo es obligatorio.');
+  }
+
+  const teamExists = database.teams.some((team) => team.id === teamId);
+  if (!teamExists) {
+    throw new Error('El equipo especificado no existe.');
+  }
+
+  const players = database.players.filter((p) => p.teamId === teamId);
+  return players.map((p) => ({ ...p }));
+};
 
 
 // ==========================================
