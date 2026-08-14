@@ -1,0 +1,477 @@
+/* Estética inspirada en la jerarquía azul, barras compactas y tarjetas editoriales de FIFA. */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100%;
+    background: #eef3fb;
+}
+
+groups-component {
+    display: block;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #082b4c;
+}
+
+.groups-app {
+    min-height: 100vh;
+    background: linear-gradient(#eef3fb 0 12.5rem, #fff 12.5rem);
+}
+
+/* ========================= NAVBAR ========================= */
+
+.groups-navbar {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    min-height: 4.5rem;
+    padding: 0 7%;
+    color: #fff;
+    background: #005a9c;
+    box-shadow: 0 2px 10px rgb(0 35 69 / 16%);
+}
+
+.groups-navbar a {
+    padding: .9rem .75rem;
+    border-radius: .7rem;
+    color: inherit;
+    font-size: .9rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.groups-navbar a:hover,
+.groups-navbar a.activo {
+    background: rgb(255 255 255 / 16%);
+}
+
+.groups-navbar .groups-logo {
+    margin-right: 1.25rem;
+    padding-left: 0;
+    font-size: 1.7rem;
+    font-weight: 900;
+    letter-spacing: -.08rem;
+}
+
+/* ========================= CONTENEDOR PRINCIPAL ========================= */
+
+groups-component main {
+    width: min(1480px, 96%);
+    margin: 1.5rem auto 1rem;
+}
+
+/* ========================= HEADER ========================= */
+
+.groups-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: .85rem;
+    border-bottom: 1px solid #c7d5e6;
+}
+
+.groups-eyebrow {
+    margin-bottom: .45rem;
+    color: #0062a9;
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .1rem;
+}
+
+.groups-header h1 {
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    line-height: 1;
+}
+
+/* ========================= MENSAJES ========================= */
+
+#mensaje-confirmacion {
+    margin: 0 0 1rem;
+    padding: .85rem 1rem;
+    border-left: .3rem solid #138a4a;
+    color: #0c6031;
+    background: #e8f8ee;
+}
+
+#mensaje-confirmacion.groups-error {
+    border-left-color: #c72035;
+    color: #991b2d;
+    background: #fff0f2;
+}
+
+/* ========================= GRID DE GRUPOS ========================= */
+
+.groups-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+/* ========================= TARJETA DE GRUPO ========================= */
+
+.group-card {
+    display: grid;
+    grid-template-rows: auto 3.2rem auto 1fr;
+    gap: .55rem;
+    min-height: 16.5rem;
+    padding: 1.15rem;
+    border-top: .3rem solid #0062a9;
+    box-shadow: 0 8px 24px rgb(1 39 74 / 10%);
+    background: #fff;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.group-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgb(1 39 74 / 16%);
+}
+
+.group-card-code {
+    color: #0062a9;
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .08rem;
+    text-transform: uppercase;
+}
+
+.group-card h2 {
+    overflow: hidden;
+    font-size: 1.35rem;
+    line-height: 1.35;
+}
+
+.group-card-id {
+    color: #526b82;
+    font-size: .9rem;
+}
+
+.group-card footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+    padding-top: .9rem;
+    border-top: 1px solid #e1e9f1;
+}
+
+.group-card footer>span {
+    color: #0062a9;
+    font-size: .78rem;
+    font-weight: 700;
+}
+
+.group-card footer div {
+    display: flex;
+    gap: .4rem;
+}
+
+/* Código A, B, C, etc. */
+.group-code {
+    display: inline-flex;
+    min-width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: .4rem;
+    color: #fff !important;
+    background: #0062a9;
+}
+
+/* ========================= BARRA DE HERRAMIENTAS ========================= */
+
+.groups-toolbar {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+}
+
+.groups-toolbar input {
+    width: 15rem;
+    padding: .65rem .8rem;
+    border: 1px solid #afc1d2;
+    border-radius: 2rem;
+    color: #082b4c;
+    font: inherit;
+    background: #fff;
+}
+
+.groups-toolbar input:focus {
+    outline: 2px solid #74b8e7;
+    border-color: #0062a9;
+}
+
+/* ========================= BOTONES CIRCULARES ========================= */
+
+.groups-icon-button {
+    display: inline-grid;
+    width: 2.45rem;
+    height: 2.45rem;
+    place-items: center;
+    padding: 0;
+    border: 1px solid #0062a9;
+    border-radius: 50%;
+    color: #0062a9;
+    font: inherit;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    background: #fff;
+}
+
+.groups-icon-button:hover {
+    color: #fff;
+    background: #0062a9;
+}
+
+.groups-button-primary {
+    border-color: #0062a9;
+    color: #fff;
+    background: #0062a9;
+}
+
+.groups-button-primary:hover {
+    background: #004b81;
+}
+
+.groups-button-danger {
+    border-color: #bd1e37;
+    color: #bd1e37;
+}
+
+.groups-button-danger:hover {
+    color: #fff;
+    background: #bd1e37;
+}
+
+/* ========================= BOTÓN GUARDAR ========================= */
+
+.groups-save-button {
+    padding: .75rem;
+    border: 0;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    background: #0062a9;
+}
+
+.groups-save-button:hover {
+    background: #004b81;
+}
+
+/* ========================= CARGANDO / SIN RESULTADOS ========================= */
+
+.groups-loading {
+    grid-column: 1 / -1;
+    padding: 2rem;
+    color: #526b82;
+    text-align: center;
+}
+
+/* ========================= PAGINACIÓN ========================= */
+
+.groups-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .45rem;
+    margin: 1rem 0;
+}
+
+.groups-pagination button {
+    display: grid;
+    width: 2.4rem;
+    height: 2.4rem;
+    place-items: center;
+    border: 1px solid #b9d5ea;
+    border-radius: 50%;
+    color: #0062a9;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    background: #fff;
+    transition: .2s ease;
+}
+
+.groups-pagination button:hover:not(:disabled) {
+    border-color: #0062a9;
+    color: #fff;
+    background: #0062a9;
+}
+
+.groups-pagination button.activo {
+    border-color: #0062a9;
+    color: #fff;
+    background: #0062a9;
+    box-shadow: 0 4px 12px rgb(0 98 169 / 28%);
+}
+
+.groups-pagination button:disabled {
+    cursor: not-allowed;
+    opacity: .4;
+}
+
+.groups-pagination .pagination-arrow {
+    border-radius: .65rem;
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+
+/* ========================= MODALES ========================= */
+
+.groups-modal[hidden] {
+    display: none;
+}
+
+.groups-modal {
+    position: fixed;
+    z-index: 10;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    background: rgb(1 25 48 / 68%);
+}
+
+/* ========================= MODAL ELIMINAR ========================= */
+
+.groups-confirmation {
+    display: grid;
+    width: min(100%, 25rem);
+    gap: 1rem;
+    padding: 1.75rem;
+    box-shadow: 0 20px 40px rgb(0 0 0 / 28%);
+    background: #fff;
+}
+
+.groups-confirmation h2 {
+    color: #082b4c;
+}
+
+.groups-confirmation p {
+    color: #526b82;
+}
+
+.groups-confirmation div {
+    display: flex;
+    justify-content: end;
+    gap: .65rem;
+}
+
+/* ========================= FORMULARIO ========================= */
+
+.groups-form {
+    display: grid;
+    width: min(100%, 36rem);
+    max-height: calc(100vh - 2rem);
+    gap: .85rem;
+    overflow-y: auto;
+    padding: 1.6rem;
+    box-shadow: 0 20px 40px rgb(0 0 0 / 28%);
+    background: #fff;
+}
+
+.groups-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .4rem;
+}
+
+.groups-modal-header h2 {
+    font-size: 1.45rem;
+}
+
+.groups-close {
+    border: 0;
+    color: #005a9c;
+    font-size: 2rem;
+    cursor: pointer;
+    background: transparent;
+}
+
+.groups-form label {
+    display: grid;
+    gap: .35rem;
+    color: #294d6d;
+    font-size: .85rem;
+    font-weight: 700;
+}
+
+.groups-form input,
+.groups-form select {
+    width: 100%;
+    padding: .7rem;
+    border: 1px solid #afc1d2;
+    color: #082b4c;
+    font: inherit;
+    background: #fff;
+}
+
+.groups-form input:focus,
+.groups-form select:focus {
+    outline: 2px solid #74b8e7;
+    border-color: #0062a9;
+}
+
+/* Código bloqueado al editar */
+.groups-form input[readonly] {
+    color: #637c93;
+    cursor: not-allowed;
+    background: #eef3f8;
+}
+
+/* ========================= RESPONSIVE ========================= */
+
+@media (max-width: 1000px) {
+    .groups-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .groups-navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: .5rem 4%;
+    }
+
+    .groups-navbar .groups-logo {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .groups-header {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .groups-toolbar {
+        width: 100%;
+    }
+
+    .groups-toolbar input {
+        flex: 1;
+        width: auto;
+    }
+
+    .groups-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .group-card footer {
+        align-items: start;
+        flex-direction: column;
+    }
+}
