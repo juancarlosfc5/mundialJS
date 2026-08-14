@@ -9,6 +9,79 @@
 // - Comparación en consola de children.length vs childNodes.length
 // - Navegación con parentElement y parentNode
 
+/**
+ * Limpia el contenido de un contenedor (ej. <tbody>) de forma segura
+ * utilizando replaceChildren() sin argumentos para vaciarlo.
+ * @param {HTMLElement} container - Elemento contenedor a limpiar.
+ */
+export const clearTableContainer = (container) => {
+  if (container) {
+    container.replaceChildren();
+  }
+};
+
+/**
+ * Crea una fila de resumen con el total de jugadores.
+ * Se construye completamente con createElement y textContent (sin innerHTML).
+ * @param {number} totalPlayers - Número total de jugadores a mostrar.
+ * @returns {HTMLTableRowElement} Fila resumen construida.
+ */
+export const createSummaryRow = (totalPlayers) => {
+  const row = document.createElement('tr');
+  row.classList.add('summary-row');
+
+  const td = document.createElement('td');
+  td.setAttribute('colspan', '6');
+  td.style.textAlign = 'center';
+  td.style.fontWeight = 'bold';
+  td.style.padding = '12px';
+  td.style.backgroundColor = '#e8f0fe';
+  td.style.color = '#0062a9';
+  td.style.fontSize = '0.95rem';
+  td.textContent = `Total de Jugadores registrados: ${totalPlayers}`;
+
+  row.appendChild(td);
+  return row;
+};
+
+/**
+ * Inserta la fila resumen antes de la primera fila de jugadores
+ * utilizando insertBefore() como método obligatorio del reto.
+ * @param {HTMLTableSectionElement} tbody - Cuerpo de la tabla.
+ * @param {HTMLTableRowElement} summaryRow - Fila resumen a insertar.
+ */
+export const insertSummaryRow = (tbody, summaryRow) => {
+  if (tbody && summaryRow) {
+    tbody.insertBefore(summaryRow, tbody.firstElementChild);
+  }
+};
+
+/**
+ * Inspecciona el DOM del tbody y muestra en consola la diferencia entre
+ * children (HTMLCollection de elementos) y childNodes (NodeList con nodos de texto).
+ * Además navega usando parentElement y parentNode para demostrar su uso.
+ * @param {HTMLTableSectionElement} tbody - Cuerpo de la tabla a inspeccionar.
+ */
+export const inspectDOM = (tbody) => {
+  if (!tbody) return;
+
+  console.log('╔════════════════════════════════════════╗');
+  console.log('║   INSPECCIÓN DEL DOM (Jose - Reto 2)   ║');
+  console.log('╚════════════════════════════════════════╝');
+  console.log(`  children.length (solo elementos HTML): ${tbody.children.length}`);
+  console.log(`  childNodes.length (todos los nodos):    ${tbody.childNodes.length}`);
+  console.log(`  Diferencia (nodos texto/comentarios):   ${tbody.childNodes.length - tbody.children.length}`);
+
+  // Navegación con parentElement y parentNode
+  const firstChild = tbody.firstElementChild;
+  if (firstChild) {
+    console.log(`  parentElement del primer hijo:`, firstChild.parentElement?.tagName);
+    console.log(`  parentNode del primer hijo:`, firstChild.parentNode?.tagName);
+    console.log(`  ¿parentElement === parentNode?`, firstChild.parentElement === firstChild.parentNode);
+  }
+  console.log('─────────────────────────────────────────');
+};
+
 
 // ==========================================
 // Funciones asignadas a Manuel

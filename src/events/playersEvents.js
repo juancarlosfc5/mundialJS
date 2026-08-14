@@ -1,15 +1,98 @@
-import { createPlayer, deletePlayer } from '../services/playersService.js';
-import { createPlayerRow } from '../views/playersView.js';
+import { createPlayer, deletePlayer, listPlayers, getPlayersByTeam } from '../services/playersService.js';
+import {
+  createPlayerRow,
+  clearTableContainer,
+  createSummaryRow,
+  insertSummaryRow,
+  inspectDOM,
+  renderPlayerRows,
+} from '../views/playersView.js';
 
 // Grupo 3 - Manejadores de Eventos del Módulo de Jugadores
 
 // ==========================================
 // Funciones asignadas a Jose (Filtros y Consultas)
 // ==========================================
-// Jose implementará:
-// - handleTeamFilterChange (filtrado dinámico por equipo con evento change)
-// - handlePlayerRowHover (resaltado interactivo con mouseover y mouseout)
-// - setupPlayerFilterEvents (inicializador de eventos de consulta)
+
+/**
+ * Manejador del evento change para el filtrado dinámico de jugadores por equipo.
+ * Consume listPlayers() o getPlayersByTeam() según la selección y re-renderiza la tabla.
+ * @param {Event} event - Evento change del selector de equipos.
+ * @param {HTMLTableSectionElement} tbodyElement - Cuerpo de la tabla a actualizar.
+ * @param {Map<string, string>} teamsMap - Mapa de ID de equipo a Nombre de equipo.
+ */
+export const handleTeamFilterChange = async (event, tbodyElement, teamsMap = new Map()) => {
+  const teamId = event.target.value;
+
+  try {
+    // Obtener jugadores según el filtro seleccionado
+    let players = [];
+    if (teamId === 'all' || !teamId) {
+      players = await listPlayers();
+    } else {
+      players = await getPlayersByTeam(teamId);
+    }
+
+    // Limpiar el contenedor usando replaceChildren() (función del Reto 2)
+    clearTableContainer(tbodyElement);
+
+    // Re-renderizar las filas con la función de Manuel
+    renderPlayerRows(tbodyElement, players, teamsMap);
+
+    // Crear e insertar la fila de resumen actualizada
+    const summaryRow = createSummaryRow(players.length);
+    insertSummaryRow(tbodyElement, summaryRow);
+
+    // Ejecutar la inspección del DOM en consola
+    inspectDOM(tbodyElement);
+  } catch (error) {
+    console.error('Error al filtrar jugadores:', error.message);
+  }
+};
+
+/**
+ * Manejador unificado para mouseover y mouseout con delegación de eventos.
+ * Aplica o remueve un resaltado visual en las filas de jugadores.
+ * @param {MouseEvent} event - Evento de mouse sobre el contenedor de la tabla.
+ */
+export const handlePlayerRowHover = (event) => {
+  const row = event.target.closest('tr.player-row');
+  if (!row) return;
+
+  if (event.type === 'mouseover') {
+    row.classList.add('row-hover');
+    row.style.backgroundColor = '#f0f7ff';
+    row.style.cursor = 'pointer';
+    row.style.transition = 'background-color 0.15s ease';
+  } else if (event.type === 'mouseout') {
+    row.classList.remove('row-hover');
+    row.style.backgroundColor = '';
+    row.style.cursor = '';
+  }
+};
+
+/**
+ * Inicializador de eventos de consulta y visualización.
+ * Vincula los listeners de filtrado por equipo y resaltado de filas con addEventListener.
+ * @param {HTMLSelectElement} filterSelect - Selector de filtro de equipos.
+ * @param {HTMLTableSectionElement} tbodyElement - Cuerpo de la tabla.
+ * @param {HTMLElement} tableContainerElement - Contenedor de la tabla para delegación de eventos.
+ * @param {Map<string, string>} teamsMap - Mapa de ID de equipo a Nombre de equipo.
+ */
+export const setupPlayerFilterEvents = (filterSelect, tbodyElement, tableContainerElement, teamsMap = new Map()) => {
+  // Evento change para filtrar por equipo
+  if (filterSelect) {
+    filterSelect.addEventListener('change', (event) =>
+      handleTeamFilterChange(event, tbodyElement, teamsMap)
+    );
+  }
+
+  // Eventos mouseover y mouseout para resaltado interactivo con delegación
+  if (tableContainerElement) {
+    tableContainerElement.addEventListener('mouseover', handlePlayerRowHover);
+    tableContainerElement.addEventListener('mouseout', handlePlayerRowHover);
+  }
+};
 
 
 // ==========================================
