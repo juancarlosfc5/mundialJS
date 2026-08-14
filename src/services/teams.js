@@ -1,4 +1,4 @@
-import { db } from "../database";
+import { db } from "../database.js";
 
 // Expresión regular para validar el código del equipo
 const TEAM_CODE_REGEX = /^[A-Z]{3}$/;

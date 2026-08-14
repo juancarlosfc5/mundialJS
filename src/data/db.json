@@ -1,164 +1,1351 @@
 {
   "groups": [
-    { "id": "group-a", "code": "A", "name": "Grupo A" },
-    { "id": "group-b", "code": "B", "name": "Grupo B" },
-    { "id": "group-c", "code": "C", "name": "Grupo C" },
-    { "id": "group-d", "code": "D", "name": "Grupo D" },
-    { "id": "group-e", "code": "E", "name": "Grupo E" },
-    { "id": "group-f", "code": "F", "name": "Grupo F" },
-    { "id": "group-g", "code": "G", "name": "Grupo G" },
-    { "id": "group-h", "code": "H", "name": "Grupo H" },
-    { "id": "group-i", "code": "I", "name": "Grupo I" },
-    { "id": "group-j", "code": "J", "name": "Grupo J" },
-    { "id": "group-k", "code": "K", "name": "Grupo K" },
-    { "id": "group-l", "code": "L", "name": "Grupo L" }
+    {
+      "id": "group-a",
+      "code": "A",
+      "name": "Grupo A"
+    },
+    {
+      "id": "group-b",
+      "code": "B",
+      "name": "Grupo B"
+    },
+    {
+      "id": "group-c",
+      "code": "C",
+      "name": "Grupo C"
+    },
+    {
+      "id": "group-d",
+      "code": "D",
+      "name": "Grupo D"
+    },
+    {
+      "id": "group-e",
+      "code": "E",
+      "name": "Grupo E"
+    },
+    {
+      "id": "group-f",
+      "code": "F",
+      "name": "Grupo F"
+    },
+    {
+      "id": "group-g",
+      "code": "G",
+      "name": "Grupo G"
+    },
+    {
+      "id": "group-h",
+      "code": "H",
+      "name": "Grupo H"
+    },
+    {
+      "id": "group-i",
+      "code": "I",
+      "name": "Grupo I"
+    },
+    {
+      "id": "group-j",
+      "code": "J",
+      "name": "Grupo J"
+    },
+    {
+      "id": "group-k",
+      "code": "K",
+      "name": "Grupo K"
+    },
+    {
+      "id": "group-l",
+      "code": "L",
+      "name": "Grupo L"
+    }
   ],
   "teams": [
-    { "id": "team-mex", "name": "México", "code": "MEX", "groupId": "group-a", "coach": "" },
-    { "id": "team-rsa", "name": "Sudáfrica", "code": "RSA", "groupId": "group-a", "coach": "" },
-    { "id": "team-kor", "name": "República de Corea", "code": "KOR", "groupId": "group-a", "coach": "" },
-    { "id": "team-cze", "name": "Chequia", "code": "CZE", "groupId": "group-a", "coach": "" },
-    { "id": "team-can", "name": "Canadá", "code": "CAN", "groupId": "group-b", "coach": "" },
-    { "id": "team-bih", "name": "Bosnia y Herzegovina", "code": "BIH", "groupId": "group-b", "coach": "" },
-    { "id": "team-qat", "name": "Catar", "code": "QAT", "groupId": "group-b", "coach": "" },
-    { "id": "team-sui", "name": "Suiza", "code": "SUI", "groupId": "group-b", "coach": "" },
-    { "id": "team-bra", "name": "Brasil", "code": "BRA", "groupId": "group-c", "coach": "" },
-    { "id": "team-mar", "name": "Marruecos", "code": "MAR", "groupId": "group-c", "coach": "" },
-    { "id": "team-hai", "name": "Haití", "code": "HAI", "groupId": "group-c", "coach": "" },
-    { "id": "team-sco", "name": "Escocia", "code": "SCO", "groupId": "group-c", "coach": "" },
-    { "id": "team-usa", "name": "Estados Unidos", "code": "USA", "groupId": "group-d", "coach": "" },
-    { "id": "team-par", "name": "Paraguay", "code": "PAR", "groupId": "group-d", "coach": "" },
-    { "id": "team-aus", "name": "Australia", "code": "AUS", "groupId": "group-d", "coach": "" },
-    { "id": "team-tur", "name": "Türkiye", "code": "TUR", "groupId": "group-d", "coach": "" },
-    { "id": "team-ger", "name": "Alemania", "code": "GER", "groupId": "group-e", "coach": "" },
-    { "id": "team-cuw", "name": "Curaçao", "code": "CUW", "groupId": "group-e", "coach": "" },
-    { "id": "team-civ", "name": "Costa de Marfil", "code": "CIV", "groupId": "group-e", "coach": "" },
-    { "id": "team-ecu", "name": "Ecuador", "code": "ECU", "groupId": "group-e", "coach": "" },
-    { "id": "team-ned", "name": "Países Bajos", "code": "NED", "groupId": "group-f", "coach": "" },
-    { "id": "team-jpn", "name": "Japón", "code": "JPN", "groupId": "group-f", "coach": "" },
-    { "id": "team-swe", "name": "Suecia", "code": "SWE", "groupId": "group-f", "coach": "" },
-    { "id": "team-tun", "name": "Túnez", "code": "TUN", "groupId": "group-f", "coach": "" },
-    { "id": "team-bel", "name": "Bélgica", "code": "BEL", "groupId": "group-g", "coach": "" },
-    { "id": "team-egy", "name": "Egipto", "code": "EGY", "groupId": "group-g", "coach": "" },
-    { "id": "team-irn", "name": "Irán", "code": "IRN", "groupId": "group-g", "coach": "" },
-    { "id": "team-nzl", "name": "Nueva Zelanda", "code": "NZL", "groupId": "group-g", "coach": "" },
-    { "id": "team-esp", "name": "España", "code": "ESP", "groupId": "group-h", "coach": "" },
-    { "id": "team-cpv", "name": "Cabo Verde", "code": "CPV", "groupId": "group-h", "coach": "" },
-    { "id": "team-ksa", "name": "Arabia Saudita", "code": "KSA", "groupId": "group-h", "coach": "" },
-    { "id": "team-uru", "name": "Uruguay", "code": "URU", "groupId": "group-h", "coach": "" },
-    { "id": "team-fra", "name": "Francia", "code": "FRA", "groupId": "group-i", "coach": "" },
-    { "id": "team-sen", "name": "Senegal", "code": "SEN", "groupId": "group-i", "coach": "" },
-    { "id": "team-irq", "name": "Irak", "code": "IRQ", "groupId": "group-i", "coach": "" },
-    { "id": "team-nor", "name": "Noruega", "code": "NOR", "groupId": "group-i", "coach": "" },
-    { "id": "team-arg", "name": "Argentina", "code": "ARG", "groupId": "group-j", "coach": "" },
-    { "id": "team-alg", "name": "Argelia", "code": "ALG", "groupId": "group-j", "coach": "" },
-    { "id": "team-aut", "name": "Austria", "code": "AUT", "groupId": "group-j", "coach": "" },
-    { "id": "team-jor", "name": "Jordania", "code": "JOR", "groupId": "group-j", "coach": "" },
-    { "id": "team-por", "name": "Portugal", "code": "POR", "groupId": "group-k", "coach": "" },
-    { "id": "team-cod", "name": "RD del Congo", "code": "COD", "groupId": "group-k", "coach": "" },
-    { "id": "team-uzb", "name": "Uzbekistán", "code": "UZB", "groupId": "group-k", "coach": "" },
-    { "id": "team-col", "name": "Colombia", "code": "COL", "groupId": "group-k", "coach": "" },
-    { "id": "team-eng", "name": "Inglaterra", "code": "ENG", "groupId": "group-l", "coach": "" },
-    { "id": "team-cro", "name": "Croacia", "code": "CRO", "groupId": "group-l", "coach": "" },
-    { "id": "team-gha", "name": "Ghana", "code": "GHA", "groupId": "group-l", "coach": "" },
-    { "id": "team-pan", "name": "Panamá", "code": "PAN", "groupId": "group-l", "coach": "" }
+    {
+      "id": "team-mex",
+      "name": "México",
+      "code": "MEX",
+      "groupId": "group-a",
+      "coach": ""
+    },
+    {
+      "id": "team-rsa",
+      "name": "Sudáfrica",
+      "code": "RSA",
+      "groupId": "group-a",
+      "coach": ""
+    },
+    {
+      "id": "team-kor",
+      "name": "República de Corea",
+      "code": "KOR",
+      "groupId": "group-a",
+      "coach": ""
+    },
+    {
+      "id": "team-cze",
+      "name": "Chequia",
+      "code": "CZE",
+      "groupId": "group-a",
+      "coach": ""
+    },
+    {
+      "id": "team-can",
+      "name": "Canadá",
+      "code": "CAN",
+      "groupId": "group-b",
+      "coach": ""
+    },
+    {
+      "id": "team-bih",
+      "name": "Bosnia y Herzegovina",
+      "code": "BIH",
+      "groupId": "group-b",
+      "coach": ""
+    },
+    {
+      "id": "team-qat",
+      "name": "Catar",
+      "code": "QAT",
+      "groupId": "group-b",
+      "coach": ""
+    },
+    {
+      "id": "team-sui",
+      "name": "Suiza",
+      "code": "SUI",
+      "groupId": "group-b",
+      "coach": ""
+    },
+    {
+      "id": "team-bra",
+      "name": "Brasil",
+      "code": "BRA",
+      "groupId": "group-c",
+      "coach": ""
+    },
+    {
+      "id": "team-mar",
+      "name": "Marruecos",
+      "code": "MAR",
+      "groupId": "group-c",
+      "coach": ""
+    },
+    {
+      "id": "team-hai",
+      "name": "Haití",
+      "code": "HAI",
+      "groupId": "group-c",
+      "coach": ""
+    },
+    {
+      "id": "team-sco",
+      "name": "Escocia",
+      "code": "SCO",
+      "groupId": "group-c",
+      "coach": ""
+    },
+    {
+      "id": "team-usa",
+      "name": "Estados Unidos",
+      "code": "USA",
+      "groupId": "group-d",
+      "coach": ""
+    },
+    {
+      "id": "team-par",
+      "name": "Paraguay",
+      "code": "PAR",
+      "groupId": "group-d",
+      "coach": ""
+    },
+    {
+      "id": "team-aus",
+      "name": "Australia",
+      "code": "AUS",
+      "groupId": "group-d",
+      "coach": ""
+    },
+    {
+      "id": "team-tur",
+      "name": "Türkiye",
+      "code": "TUR",
+      "groupId": "group-d",
+      "coach": ""
+    },
+    {
+      "id": "team-ger",
+      "name": "Alemania",
+      "code": "GER",
+      "groupId": "group-e",
+      "coach": ""
+    },
+    {
+      "id": "team-cuw",
+      "name": "Curaçao",
+      "code": "CUW",
+      "groupId": "group-e",
+      "coach": ""
+    },
+    {
+      "id": "team-civ",
+      "name": "Costa de Marfil",
+      "code": "CIV",
+      "groupId": "group-e",
+      "coach": ""
+    },
+    {
+      "id": "team-ecu",
+      "name": "Ecuador",
+      "code": "ECU",
+      "groupId": "group-e",
+      "coach": ""
+    },
+    {
+      "id": "team-ned",
+      "name": "Países Bajos",
+      "code": "NED",
+      "groupId": "group-f",
+      "coach": ""
+    },
+    {
+      "id": "team-jpn",
+      "name": "Japón",
+      "code": "JPN",
+      "groupId": "group-f",
+      "coach": ""
+    },
+    {
+      "id": "team-swe",
+      "name": "Suecia",
+      "code": "SWE",
+      "groupId": "group-f",
+      "coach": ""
+    },
+    {
+      "id": "team-tun",
+      "name": "Túnez",
+      "code": "TUN",
+      "groupId": "group-f",
+      "coach": ""
+    },
+    {
+      "id": "team-bel",
+      "name": "Bélgica",
+      "code": "BEL",
+      "groupId": "group-g",
+      "coach": ""
+    },
+    {
+      "id": "team-egy",
+      "name": "Egipto",
+      "code": "EGY",
+      "groupId": "group-g",
+      "coach": ""
+    },
+    {
+      "id": "team-irn",
+      "name": "Irán",
+      "code": "IRN",
+      "groupId": "group-g",
+      "coach": ""
+    },
+    {
+      "id": "team-nzl",
+      "name": "Nueva Zelanda",
+      "code": "NZL",
+      "groupId": "group-g",
+      "coach": ""
+    },
+    {
+      "id": "team-esp",
+      "name": "España",
+      "code": "ESP",
+      "groupId": "group-h",
+      "coach": ""
+    },
+    {
+      "id": "team-cpv",
+      "name": "Cabo Verde",
+      "code": "CPV",
+      "groupId": "group-h",
+      "coach": ""
+    },
+    {
+      "id": "team-ksa",
+      "name": "Arabia Saudita",
+      "code": "KSA",
+      "groupId": "group-h",
+      "coach": ""
+    },
+    {
+      "id": "team-uru",
+      "name": "Uruguay",
+      "code": "URU",
+      "groupId": "group-h",
+      "coach": ""
+    },
+    {
+      "id": "team-fra",
+      "name": "Francia",
+      "code": "FRA",
+      "groupId": "group-i",
+      "coach": ""
+    },
+    {
+      "id": "team-sen",
+      "name": "Senegal",
+      "code": "SEN",
+      "groupId": "group-i",
+      "coach": ""
+    },
+    {
+      "id": "team-irq",
+      "name": "Irak",
+      "code": "IRQ",
+      "groupId": "group-i",
+      "coach": ""
+    },
+    {
+      "id": "team-nor",
+      "name": "Noruega",
+      "code": "NOR",
+      "groupId": "group-i",
+      "coach": ""
+    },
+    {
+      "id": "team-arg",
+      "name": "Argentina",
+      "code": "ARG",
+      "groupId": "group-j",
+      "coach": ""
+    },
+    {
+      "id": "team-alg",
+      "name": "Argelia",
+      "code": "ALG",
+      "groupId": "group-j",
+      "coach": ""
+    },
+    {
+      "id": "team-aut",
+      "name": "Austria",
+      "code": "AUT",
+      "groupId": "group-j",
+      "coach": ""
+    },
+    {
+      "id": "team-jor",
+      "name": "Jordania",
+      "code": "JOR",
+      "groupId": "group-j",
+      "coach": ""
+    },
+    {
+      "id": "team-por",
+      "name": "Portugal",
+      "code": "POR",
+      "groupId": "group-k",
+      "coach": ""
+    },
+    {
+      "id": "team-cod",
+      "name": "RD del Congo",
+      "code": "COD",
+      "groupId": "group-k",
+      "coach": ""
+    },
+    {
+      "id": "team-uzb",
+      "name": "Uzbekistán",
+      "code": "UZB",
+      "groupId": "group-k",
+      "coach": ""
+    },
+    {
+      "id": "team-col",
+      "name": "Colombia",
+      "code": "COL",
+      "groupId": "group-k",
+      "coach": ""
+    },
+    {
+      "id": "team-eng",
+      "name": "Inglaterra",
+      "code": "ENG",
+      "groupId": "group-l",
+      "coach": ""
+    },
+    {
+      "id": "team-cro",
+      "name": "Croacia",
+      "code": "CRO",
+      "groupId": "group-l",
+      "coach": ""
+    },
+    {
+      "id": "team-gha",
+      "name": "Ghana",
+      "code": "GHA",
+      "groupId": "group-l",
+      "coach": ""
+    },
+    {
+      "id": "team-pan",
+      "name": "Panamá",
+      "code": "PAN",
+      "groupId": "group-l",
+      "coach": ""
+    }
   ],
   "players": [
-    { "id": "player-mex-09", "teamId": "team-mex", "name": "Santiago Ramírez", "number": 9, "position": "Delantero", "age": 26, "active": true },
-    { "id": "player-kor-10", "teamId": "team-kor", "name": "Min-jun Park", "number": 10, "position": "Mediocampista", "age": 25, "active": true },
-    { "id": "player-can-11", "teamId": "team-can", "name": "Noah Tremblay", "number": 11, "position": "Delantero", "age": 24, "active": true },
-    { "id": "player-usa-09", "teamId": "team-usa", "name": "Ethan Miller", "number": 9, "position": "Delantero", "age": 27, "active": true },
-    { "id": "player-hai-07", "teamId": "team-hai", "name": "Jean Baptiste", "number": 7, "position": "Mediocampista", "age": 23, "active": true },
-    { "id": "player-bra-10", "teamId": "team-bra", "name": "Lucas Ferreira", "number": 10, "position": "Mediocampista", "age": 25, "active": true },
-    { "id": "player-qat-11", "teamId": "team-qat", "name": "Khalid Al Noor", "number": 11, "position": "Delantero", "age": 26, "active": true },
-    { "id": "player-civ-09", "teamId": "team-civ", "name": "Yann Koffi", "number": 9, "position": "Delantero", "age": 24, "active": true },
-    { "id": "player-ger-10", "teamId": "team-ger", "name": "Leon Wagner", "number": 10, "position": "Mediocampista", "age": 27, "active": true },
-    { "id": "player-ned-11", "teamId": "team-ned", "name": "Daan de Jong", "number": 11, "position": "Delantero", "age": 25, "active": true }
+    {
+      "id": "player-mex-09",
+      "teamId": "team-mex",
+      "name": "Santiago Ramírez",
+      "number": 9,
+      "position": "Delantero",
+      "age": 26,
+      "active": true
+    },
+    {
+      "id": "player-kor-10",
+      "teamId": "team-kor",
+      "name": "Min-jun Park",
+      "number": 10,
+      "position": "Mediocampista",
+      "age": 25,
+      "active": true
+    },
+    {
+      "id": "player-can-11",
+      "teamId": "team-can",
+      "name": "Noah Tremblay",
+      "number": 11,
+      "position": "Delantero",
+      "age": 24,
+      "active": true
+    },
+    {
+      "id": "player-usa-09",
+      "teamId": "team-usa",
+      "name": "Ethan Miller",
+      "number": 9,
+      "position": "Delantero",
+      "age": 27,
+      "active": true
+    },
+    {
+      "id": "player-hai-07",
+      "teamId": "team-hai",
+      "name": "Jean Baptiste",
+      "number": 7,
+      "position": "Mediocampista",
+      "age": 23,
+      "active": true
+    },
+    {
+      "id": "player-bra-10",
+      "teamId": "team-bra",
+      "name": "Lucas Ferreira",
+      "number": 10,
+      "position": "Mediocampista",
+      "age": 25,
+      "active": true
+    },
+    {
+      "id": "player-qat-11",
+      "teamId": "team-qat",
+      "name": "Khalid Al Noor",
+      "number": 11,
+      "position": "Delantero",
+      "age": 26,
+      "active": true
+    },
+    {
+      "id": "player-civ-09",
+      "teamId": "team-civ",
+      "name": "Yann Koffi",
+      "number": 9,
+      "position": "Delantero",
+      "age": 24,
+      "active": true
+    },
+    {
+      "id": "player-ger-10",
+      "teamId": "team-ger",
+      "name": "Leon Wagner",
+      "number": 10,
+      "position": "Mediocampista",
+      "age": 27,
+      "active": true
+    },
+    {
+      "id": "player-ned-11",
+      "teamId": "team-ned",
+      "name": "Daan de Jong",
+      "number": 11,
+      "position": "Delantero",
+      "age": 25,
+      "active": true
+    }
   ],
   "matches": [
-    { "id": "match-01", "matchNumber": 1, "groupId": "group-a", "homeTeamId": "team-mex", "awayTeamId": "team-rsa", "date": "2026-06-11", "kickoffTimeET": "15:00", "venue": "Ciudad de México", "status": "scheduled" },
-    { "id": "match-02", "matchNumber": 2, "groupId": "group-a", "homeTeamId": "team-kor", "awayTeamId": "team-cze", "date": "2026-06-11", "kickoffTimeET": "22:00", "venue": "Guadalajara", "status": "scheduled" },
-    { "id": "match-03", "matchNumber": 3, "groupId": "group-b", "homeTeamId": "team-can", "awayTeamId": "team-bih", "date": "2026-06-12", "kickoffTimeET": "15:00", "venue": "Toronto", "status": "scheduled" },
-    { "id": "match-04", "matchNumber": 4, "groupId": "group-d", "homeTeamId": "team-usa", "awayTeamId": "team-par", "date": "2026-06-12", "kickoffTimeET": "21:00", "venue": "Los Ángeles", "status": "scheduled" },
-    { "id": "match-05", "matchNumber": 5, "groupId": "group-c", "homeTeamId": "team-hai", "awayTeamId": "team-sco", "date": "2026-06-13", "kickoffTimeET": "21:00", "venue": "Boston", "status": "scheduled" },
-    { "id": "match-06", "matchNumber": 6, "groupId": "group-d", "homeTeamId": "team-aus", "awayTeamId": "team-tur", "date": "2026-06-13", "kickoffTimeET": "00:00", "venue": "Vancouver", "status": "scheduled" },
-    { "id": "match-07", "matchNumber": 7, "groupId": "group-c", "homeTeamId": "team-bra", "awayTeamId": "team-mar", "date": "2026-06-13", "kickoffTimeET": "18:00", "venue": "Nueva York / Nueva Jersey", "status": "scheduled" },
-    { "id": "match-08", "matchNumber": 8, "groupId": "group-b", "homeTeamId": "team-qat", "awayTeamId": "team-sui", "date": "2026-06-13", "kickoffTimeET": "15:00", "venue": "Área de la Bahía de San Francisco", "status": "scheduled" },
-    { "id": "match-09", "matchNumber": 9, "groupId": "group-e", "homeTeamId": "team-civ", "awayTeamId": "team-ecu", "date": "2026-06-14", "kickoffTimeET": "19:00", "venue": "Filadelfia", "status": "scheduled" },
-    { "id": "match-10", "matchNumber": 10, "groupId": "group-e", "homeTeamId": "team-ger", "awayTeamId": "team-cuw", "date": "2026-06-14", "kickoffTimeET": "13:00", "venue": "Houston", "status": "scheduled" },
-    { "id": "match-11", "matchNumber": 11, "groupId": "group-f", "homeTeamId": "team-ned", "awayTeamId": "team-jpn", "date": "2026-06-14", "kickoffTimeET": "16:00", "venue": "Dallas", "status": "scheduled" },
-    { "id": "match-12", "matchNumber": 12, "groupId": "group-f", "homeTeamId": "team-swe", "awayTeamId": "team-tun", "date": "2026-06-14", "kickoffTimeET": "22:00", "venue": "Monterrey", "status": "scheduled" },
-    { "id": "match-13", "matchNumber": 13, "groupId": "group-h", "homeTeamId": "team-ksa", "awayTeamId": "team-uru", "date": "2026-06-15", "kickoffTimeET": "18:00", "venue": "Miami", "status": "scheduled" },
-    { "id": "match-14", "matchNumber": 14, "groupId": "group-h", "homeTeamId": "team-esp", "awayTeamId": "team-cpv", "date": "2026-06-15", "kickoffTimeET": "12:00", "venue": "Atlanta", "status": "scheduled" },
-    { "id": "match-15", "matchNumber": 15, "groupId": "group-g", "homeTeamId": "team-irn", "awayTeamId": "team-nzl", "date": "2026-06-15", "kickoffTimeET": "21:00", "venue": "Los Ángeles", "status": "scheduled" },
-    { "id": "match-16", "matchNumber": 16, "groupId": "group-g", "homeTeamId": "team-bel", "awayTeamId": "team-egy", "date": "2026-06-15", "kickoffTimeET": "15:00", "venue": "Seattle", "status": "scheduled" },
-    { "id": "match-17", "matchNumber": 17, "groupId": "group-i", "homeTeamId": "team-fra", "awayTeamId": "team-sen", "date": "2026-06-16", "kickoffTimeET": "15:00", "venue": "Nueva York / Nueva Jersey", "status": "scheduled" },
-    { "id": "match-18", "matchNumber": 18, "groupId": "group-i", "homeTeamId": "team-irq", "awayTeamId": "team-nor", "date": "2026-06-16", "kickoffTimeET": "18:00", "venue": "Boston", "status": "scheduled" },
-    { "id": "match-19", "matchNumber": 19, "groupId": "group-j", "homeTeamId": "team-arg", "awayTeamId": "team-alg", "date": "2026-06-16", "kickoffTimeET": "21:00", "venue": "Kansas City", "status": "scheduled" },
-    { "id": "match-20", "matchNumber": 20, "groupId": "group-j", "homeTeamId": "team-aut", "awayTeamId": "team-jor", "date": "2026-06-16", "kickoffTimeET": "00:00", "venue": "Área de la Bahía de San Francisco", "status": "scheduled" },
-    { "id": "match-21", "matchNumber": 21, "groupId": "group-l", "homeTeamId": "team-gha", "awayTeamId": "team-pan", "date": "2026-06-17", "kickoffTimeET": "19:00", "venue": "Toronto", "status": "scheduled" },
-    { "id": "match-22", "matchNumber": 22, "groupId": "group-l", "homeTeamId": "team-eng", "awayTeamId": "team-cro", "date": "2026-06-17", "kickoffTimeET": "16:00", "venue": "Dallas", "status": "scheduled" },
-    { "id": "match-23", "matchNumber": 23, "groupId": "group-k", "homeTeamId": "team-por", "awayTeamId": "team-cod", "date": "2026-06-17", "kickoffTimeET": "13:00", "venue": "Houston", "status": "scheduled" },
-    { "id": "match-24", "matchNumber": 24, "groupId": "group-k", "homeTeamId": "team-uzb", "awayTeamId": "team-col", "date": "2026-06-17", "kickoffTimeET": "22:00", "venue": "Ciudad de México", "status": "scheduled" },
-    { "id": "match-25", "matchNumber": 25, "groupId": "group-a", "homeTeamId": "team-cze", "awayTeamId": "team-rsa", "date": "2026-06-18", "kickoffTimeET": "12:00", "venue": "Atlanta", "status": "scheduled" },
-    { "id": "match-26", "matchNumber": 26, "groupId": "group-b", "homeTeamId": "team-sui", "awayTeamId": "team-bih", "date": "2026-06-18", "kickoffTimeET": "15:00", "venue": "Los Ángeles", "status": "scheduled" },
-    { "id": "match-27", "matchNumber": 27, "groupId": "group-b", "homeTeamId": "team-can", "awayTeamId": "team-qat", "date": "2026-06-18", "kickoffTimeET": "18:00", "venue": "Vancouver", "status": "scheduled" },
-    { "id": "match-28", "matchNumber": 28, "groupId": "group-a", "homeTeamId": "team-mex", "awayTeamId": "team-kor", "date": "2026-06-18", "kickoffTimeET": "21:00", "venue": "Guadalajara", "status": "scheduled" },
-    { "id": "match-29", "matchNumber": 29, "groupId": "group-c", "homeTeamId": "team-bra", "awayTeamId": "team-hai", "date": "2026-06-19", "kickoffTimeET": "20:30", "venue": "Filadelfia", "status": "scheduled" },
-    { "id": "match-30", "matchNumber": 30, "groupId": "group-c", "homeTeamId": "team-sco", "awayTeamId": "team-mar", "date": "2026-06-19", "kickoffTimeET": "18:00", "venue": "Boston", "status": "scheduled" },
-    { "id": "match-31", "matchNumber": 31, "groupId": "group-d", "homeTeamId": "team-tur", "awayTeamId": "team-par", "date": "2026-06-19", "kickoffTimeET": "23:00", "venue": "Área de la Bahía de San Francisco", "status": "scheduled" },
-    { "id": "match-32", "matchNumber": 32, "groupId": "group-d", "homeTeamId": "team-usa", "awayTeamId": "team-aus", "date": "2026-06-19", "kickoffTimeET": "15:00", "venue": "Seattle", "status": "scheduled" },
-    { "id": "match-33", "matchNumber": 33, "groupId": "group-e", "homeTeamId": "team-ger", "awayTeamId": "team-civ", "date": "2026-06-20", "kickoffTimeET": "16:00", "venue": "Toronto", "status": "scheduled" },
-    { "id": "match-34", "matchNumber": 34, "groupId": "group-e", "homeTeamId": "team-ecu", "awayTeamId": "team-cuw", "date": "2026-06-20", "kickoffTimeET": "20:00", "venue": "Kansas City", "status": "scheduled" },
-    { "id": "match-35", "matchNumber": 35, "groupId": "group-f", "homeTeamId": "team-ned", "awayTeamId": "team-swe", "date": "2026-06-20", "kickoffTimeET": "13:00", "venue": "Houston", "status": "scheduled" },
-    { "id": "match-36", "matchNumber": 36, "groupId": "group-f", "homeTeamId": "team-tun", "awayTeamId": "team-jpn", "date": "2026-06-20", "kickoffTimeET": "00:00", "venue": "Monterrey", "status": "scheduled" },
-    { "id": "match-37", "matchNumber": 37, "groupId": "group-h", "homeTeamId": "team-uru", "awayTeamId": "team-cpv", "date": "2026-06-21", "kickoffTimeET": "18:00", "venue": "Miami", "status": "scheduled" },
-    { "id": "match-38", "matchNumber": 38, "groupId": "group-h", "homeTeamId": "team-esp", "awayTeamId": "team-ksa", "date": "2026-06-21", "kickoffTimeET": "12:00", "venue": "Atlanta", "status": "scheduled" },
-    { "id": "match-39", "matchNumber": 39, "groupId": "group-g", "homeTeamId": "team-bel", "awayTeamId": "team-irn", "date": "2026-06-21", "kickoffTimeET": "15:00", "venue": "Los Ángeles", "status": "scheduled" },
-    { "id": "match-40", "matchNumber": 40, "groupId": "group-g", "homeTeamId": "team-nzl", "awayTeamId": "team-egy", "date": "2026-06-21", "kickoffTimeET": "21:00", "venue": "Vancouver", "status": "scheduled" },
-    { "id": "match-41", "matchNumber": 41, "groupId": "group-i", "homeTeamId": "team-nor", "awayTeamId": "team-sen", "date": "2026-06-22", "kickoffTimeET": "20:00", "venue": "Nueva York / Nueva Jersey", "status": "scheduled" },
-    { "id": "match-42", "matchNumber": 42, "groupId": "group-i", "homeTeamId": "team-fra", "awayTeamId": "team-irq", "date": "2026-06-22", "kickoffTimeET": "17:00", "venue": "Filadelfia", "status": "scheduled" },
-    { "id": "match-43", "matchNumber": 43, "groupId": "group-j", "homeTeamId": "team-arg", "awayTeamId": "team-aut", "date": "2026-06-22", "kickoffTimeET": "13:00", "venue": "Dallas", "status": "scheduled" },
-    { "id": "match-44", "matchNumber": 44, "groupId": "group-j", "homeTeamId": "team-jor", "awayTeamId": "team-alg", "date": "2026-06-22", "kickoffTimeET": "23:00", "venue": "Área de la Bahía de San Francisco", "status": "scheduled" },
-    { "id": "match-45", "matchNumber": 45, "groupId": "group-l", "homeTeamId": "team-eng", "awayTeamId": "team-gha", "date": "2026-06-23", "kickoffTimeET": "16:00", "venue": "Boston", "status": "scheduled" },
-    { "id": "match-46", "matchNumber": 46, "groupId": "group-l", "homeTeamId": "team-pan", "awayTeamId": "team-cro", "date": "2026-06-23", "kickoffTimeET": "19:00", "venue": "Toronto", "status": "scheduled" },
-    { "id": "match-47", "matchNumber": 47, "groupId": "group-k", "homeTeamId": "team-por", "awayTeamId": "team-uzb", "date": "2026-06-23", "kickoffTimeET": "13:00", "venue": "Houston", "status": "scheduled" },
-    { "id": "match-48", "matchNumber": 48, "groupId": "group-k", "homeTeamId": "team-col", "awayTeamId": "team-cod", "date": "2026-06-23", "kickoffTimeET": "22:00", "venue": "Guadalajara", "status": "scheduled" },
-    { "id": "match-49", "matchNumber": 49, "groupId": "group-c", "homeTeamId": "team-sco", "awayTeamId": "team-bra", "date": "2026-06-24", "kickoffTimeET": "18:00", "venue": "Miami", "status": "scheduled" },
-    { "id": "match-50", "matchNumber": 50, "groupId": "group-c", "homeTeamId": "team-mar", "awayTeamId": "team-hai", "date": "2026-06-24", "kickoffTimeET": "18:00", "venue": "Atlanta", "status": "scheduled" },
-    { "id": "match-51", "matchNumber": 51, "groupId": "group-b", "homeTeamId": "team-sui", "awayTeamId": "team-can", "date": "2026-06-24", "kickoffTimeET": "15:00", "venue": "Vancouver", "status": "scheduled" },
-    { "id": "match-52", "matchNumber": 52, "groupId": "group-b", "homeTeamId": "team-bih", "awayTeamId": "team-qat", "date": "2026-06-24", "kickoffTimeET": "15:00", "venue": "Seattle", "status": "scheduled" },
-    { "id": "match-53", "matchNumber": 53, "groupId": "group-a", "homeTeamId": "team-cze", "awayTeamId": "team-mex", "date": "2026-06-24", "kickoffTimeET": "21:00", "venue": "Ciudad de México", "status": "scheduled" },
-    { "id": "match-54", "matchNumber": 54, "groupId": "group-a", "homeTeamId": "team-rsa", "awayTeamId": "team-kor", "date": "2026-06-24", "kickoffTimeET": "21:00", "venue": "Monterrey", "status": "scheduled" },
-    { "id": "match-55", "matchNumber": 55, "groupId": "group-e", "homeTeamId": "team-cuw", "awayTeamId": "team-civ", "date": "2026-06-25", "kickoffTimeET": "16:00", "venue": "Filadelfia", "status": "scheduled" },
-    { "id": "match-56", "matchNumber": 56, "groupId": "group-e", "homeTeamId": "team-ecu", "awayTeamId": "team-ger", "date": "2026-06-25", "kickoffTimeET": "16:00", "venue": "Nueva York / Nueva Jersey", "status": "scheduled" },
-    { "id": "match-57", "matchNumber": 57, "groupId": "group-f", "homeTeamId": "team-jpn", "awayTeamId": "team-swe", "date": "2026-06-25", "kickoffTimeET": "19:00", "venue": "Dallas", "status": "scheduled" },
-    { "id": "match-58", "matchNumber": 58, "groupId": "group-f", "homeTeamId": "team-tun", "awayTeamId": "team-ned", "date": "2026-06-25", "kickoffTimeET": "19:00", "venue": "Kansas City", "status": "scheduled" },
-    { "id": "match-59", "matchNumber": 59, "groupId": "group-d", "homeTeamId": "team-tur", "awayTeamId": "team-usa", "date": "2026-06-25", "kickoffTimeET": "22:00", "venue": "Los Ángeles", "status": "scheduled" },
-    { "id": "match-60", "matchNumber": 60, "groupId": "group-d", "homeTeamId": "team-par", "awayTeamId": "team-aus", "date": "2026-06-25", "kickoffTimeET": "22:00", "venue": "Área de la Bahía de San Francisco", "status": "scheduled" },
-    { "id": "match-61", "matchNumber": 61, "groupId": "group-i", "homeTeamId": "team-nor", "awayTeamId": "team-fra", "date": "2026-06-26", "kickoffTimeET": "15:00", "venue": "Boston", "status": "scheduled" },
-    { "id": "match-62", "matchNumber": 62, "groupId": "group-i", "homeTeamId": "team-sen", "awayTeamId": "team-irq", "date": "2026-06-26", "kickoffTimeET": "15:00", "venue": "Toronto", "status": "scheduled" },
-    { "id": "match-63", "matchNumber": 63, "groupId": "group-g", "homeTeamId": "team-egy", "awayTeamId": "team-irn", "date": "2026-06-26", "kickoffTimeET": "23:00", "venue": "Seattle", "status": "scheduled" },
-    { "id": "match-64", "matchNumber": 64, "groupId": "group-g", "homeTeamId": "team-nzl", "awayTeamId": "team-bel", "date": "2026-06-26", "kickoffTimeET": "23:00", "venue": "Vancouver", "status": "scheduled" },
-    { "id": "match-65", "matchNumber": 65, "groupId": "group-h", "homeTeamId": "team-cpv", "awayTeamId": "team-ksa", "date": "2026-06-26", "kickoffTimeET": "20:00", "venue": "Houston", "status": "scheduled" },
-    { "id": "match-66", "matchNumber": 66, "groupId": "group-h", "homeTeamId": "team-uru", "awayTeamId": "team-esp", "date": "2026-06-26", "kickoffTimeET": "20:00", "venue": "Guadalajara", "status": "scheduled" },
-    { "id": "match-67", "matchNumber": 67, "groupId": "group-l", "homeTeamId": "team-pan", "awayTeamId": "team-eng", "date": "2026-06-27", "kickoffTimeET": "17:00", "venue": "Nueva York / Nueva Jersey", "status": "scheduled" },
-    { "id": "match-68", "matchNumber": 68, "groupId": "group-l", "homeTeamId": "team-cro", "awayTeamId": "team-gha", "date": "2026-06-27", "kickoffTimeET": "17:00", "venue": "Filadelfia", "status": "scheduled" },
-    { "id": "match-69", "matchNumber": 69, "groupId": "group-j", "homeTeamId": "team-alg", "awayTeamId": "team-aut", "date": "2026-06-27", "kickoffTimeET": "22:00", "venue": "Kansas City", "status": "scheduled" },
-    { "id": "match-70", "matchNumber": 70, "groupId": "group-j", "homeTeamId": "team-jor", "awayTeamId": "team-arg", "date": "2026-06-27", "kickoffTimeET": "22:00", "venue": "Dallas", "status": "scheduled" },
-    { "id": "match-71", "matchNumber": 71, "groupId": "group-k", "homeTeamId": "team-col", "awayTeamId": "team-por", "date": "2026-06-27", "kickoffTimeET": "19:30", "venue": "Miami", "status": "scheduled" },
-    { "id": "match-72", "matchNumber": 72, "groupId": "group-k", "homeTeamId": "team-cod", "awayTeamId": "team-uzb", "date": "2026-06-27", "kickoffTimeET": "19:30", "venue": "Atlanta", "status": "scheduled" }
+    {
+      "id": "match-01",
+      "matchNumber": 1,
+      "groupId": "group-a",
+      "homeTeamId": "team-mex",
+      "awayTeamId": "team-rsa",
+      "date": "2026-06-11",
+      "kickoffTimeET": "15:00",
+      "venue": "Ciudad de México",
+      "status": "in progress"
+    },
+    {
+      "id": "match-03",
+      "matchNumber": 3,
+      "groupId": "group-b",
+      "homeTeamId": "team-can",
+      "awayTeamId": "team-bih",
+      "date": "2026-06-12",
+      "kickoffTimeET": "15:00",
+      "venue": "Toronto",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-04",
+      "matchNumber": 4,
+      "groupId": "group-d",
+      "homeTeamId": "team-usa",
+      "awayTeamId": "team-par",
+      "date": "2026-06-12",
+      "kickoffTimeET": "21:00",
+      "venue": "Los Ángeles",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-05",
+      "matchNumber": 5,
+      "groupId": "group-c",
+      "homeTeamId": "team-hai",
+      "awayTeamId": "team-sco",
+      "date": "2026-06-13",
+      "kickoffTimeET": "21:00",
+      "venue": "Boston",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-06",
+      "matchNumber": 6,
+      "groupId": "group-d",
+      "homeTeamId": "team-aus",
+      "awayTeamId": "team-tur",
+      "date": "2026-06-13",
+      "kickoffTimeET": "00:00",
+      "venue": "Vancouver",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-07",
+      "matchNumber": 7,
+      "groupId": "group-c",
+      "homeTeamId": "team-bra",
+      "awayTeamId": "team-mar",
+      "date": "2026-06-13",
+      "kickoffTimeET": "18:00",
+      "venue": "Nueva York / Nueva Jersey",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-08",
+      "matchNumber": 8,
+      "groupId": "group-b",
+      "homeTeamId": "team-qat",
+      "awayTeamId": "team-sui",
+      "date": "2026-06-13",
+      "kickoffTimeET": "15:00",
+      "venue": "Área de la Bahía de San Francisco",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-09",
+      "matchNumber": 9,
+      "groupId": "group-e",
+      "homeTeamId": "team-civ",
+      "awayTeamId": "team-ecu",
+      "date": "2026-06-14",
+      "kickoffTimeET": "19:00",
+      "venue": "Filadelfia",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-10",
+      "matchNumber": 10,
+      "groupId": "group-e",
+      "homeTeamId": "team-ger",
+      "awayTeamId": "team-cuw",
+      "date": "2026-06-14",
+      "kickoffTimeET": "13:00",
+      "venue": "Houston",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-11",
+      "matchNumber": 11,
+      "groupId": "group-f",
+      "homeTeamId": "team-ned",
+      "awayTeamId": "team-jpn",
+      "date": "2026-06-14",
+      "kickoffTimeET": "16:00",
+      "venue": "Dallas",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-12",
+      "matchNumber": 12,
+      "groupId": "group-f",
+      "homeTeamId": "team-swe",
+      "awayTeamId": "team-tun",
+      "date": "2026-06-14",
+      "kickoffTimeET": "22:00",
+      "venue": "Monterrey",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-13",
+      "matchNumber": 13,
+      "groupId": "group-h",
+      "homeTeamId": "team-ksa",
+      "awayTeamId": "team-uru",
+      "date": "2026-06-15",
+      "kickoffTimeET": "18:00",
+      "venue": "Miami",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-14",
+      "matchNumber": 14,
+      "groupId": "group-h",
+      "homeTeamId": "team-esp",
+      "awayTeamId": "team-cpv",
+      "date": "2026-06-15",
+      "kickoffTimeET": "12:00",
+      "venue": "Atlanta",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-15",
+      "matchNumber": 15,
+      "groupId": "group-g",
+      "homeTeamId": "team-irn",
+      "awayTeamId": "team-nzl",
+      "date": "2026-06-15",
+      "kickoffTimeET": "21:00",
+      "venue": "Los Ángeles",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-16",
+      "matchNumber": 16,
+      "groupId": "group-g",
+      "homeTeamId": "team-bel",
+      "awayTeamId": "team-egy",
+      "date": "2026-06-15",
+      "kickoffTimeET": "15:00",
+      "venue": "Seattle",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-17",
+      "matchNumber": 17,
+      "groupId": "group-i",
+      "homeTeamId": "team-fra",
+      "awayTeamId": "team-sen",
+      "date": "2026-06-16",
+      "kickoffTimeET": "15:00",
+      "venue": "Nueva York / Nueva Jersey",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-18",
+      "matchNumber": 18,
+      "groupId": "group-i",
+      "homeTeamId": "team-irq",
+      "awayTeamId": "team-nor",
+      "date": "2026-06-16",
+      "kickoffTimeET": "18:00",
+      "venue": "Boston",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-19",
+      "matchNumber": 19,
+      "groupId": "group-j",
+      "homeTeamId": "team-arg",
+      "awayTeamId": "team-alg",
+      "date": "2026-06-16",
+      "kickoffTimeET": "21:00",
+      "venue": "Kansas City",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-20",
+      "matchNumber": 20,
+      "groupId": "group-j",
+      "homeTeamId": "team-aut",
+      "awayTeamId": "team-jor",
+      "date": "2026-06-16",
+      "kickoffTimeET": "00:00",
+      "venue": "Área de la Bahía de San Francisco",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-21",
+      "matchNumber": 21,
+      "groupId": "group-l",
+      "homeTeamId": "team-gha",
+      "awayTeamId": "team-pan",
+      "date": "2026-06-17",
+      "kickoffTimeET": "19:00",
+      "venue": "Toronto",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-22",
+      "matchNumber": 22,
+      "groupId": "group-l",
+      "homeTeamId": "team-eng",
+      "awayTeamId": "team-cro",
+      "date": "2026-06-17",
+      "kickoffTimeET": "16:00",
+      "venue": "Dallas",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-23",
+      "matchNumber": 23,
+      "groupId": "group-k",
+      "homeTeamId": "team-por",
+      "awayTeamId": "team-cod",
+      "date": "2026-06-17",
+      "kickoffTimeET": "13:00",
+      "venue": "Houston",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-24",
+      "matchNumber": 24,
+      "groupId": "group-k",
+      "homeTeamId": "team-uzb",
+      "awayTeamId": "team-col",
+      "date": "2026-06-17",
+      "kickoffTimeET": "22:00",
+      "venue": "Ciudad de México",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-25",
+      "matchNumber": 25,
+      "groupId": "group-a",
+      "homeTeamId": "team-cze",
+      "awayTeamId": "team-rsa",
+      "date": "2026-06-18",
+      "kickoffTimeET": "12:00",
+      "venue": "Atlanta",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-26",
+      "matchNumber": 26,
+      "groupId": "group-b",
+      "homeTeamId": "team-sui",
+      "awayTeamId": "team-bih",
+      "date": "2026-06-18",
+      "kickoffTimeET": "15:00",
+      "venue": "Los Ángeles",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-27",
+      "matchNumber": 27,
+      "groupId": "group-b",
+      "homeTeamId": "team-can",
+      "awayTeamId": "team-qat",
+      "date": "2026-06-18",
+      "kickoffTimeET": "18:00",
+      "venue": "Vancouver",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-28",
+      "matchNumber": 28,
+      "groupId": "group-a",
+      "homeTeamId": "team-mex",
+      "awayTeamId": "team-kor",
+      "date": "2026-06-18",
+      "kickoffTimeET": "21:00",
+      "venue": "Guadalajara",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-29",
+      "matchNumber": 29,
+      "groupId": "group-c",
+      "homeTeamId": "team-bra",
+      "awayTeamId": "team-hai",
+      "date": "2026-06-19",
+      "kickoffTimeET": "20:30",
+      "venue": "Filadelfia",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-30",
+      "matchNumber": 30,
+      "groupId": "group-c",
+      "homeTeamId": "team-sco",
+      "awayTeamId": "team-mar",
+      "date": "2026-06-19",
+      "kickoffTimeET": "18:00",
+      "venue": "Boston",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-31",
+      "matchNumber": 31,
+      "groupId": "group-d",
+      "homeTeamId": "team-tur",
+      "awayTeamId": "team-par",
+      "date": "2026-06-19",
+      "kickoffTimeET": "23:00",
+      "venue": "Área de la Bahía de San Francisco",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-32",
+      "matchNumber": 32,
+      "groupId": "group-d",
+      "homeTeamId": "team-usa",
+      "awayTeamId": "team-aus",
+      "date": "2026-06-19",
+      "kickoffTimeET": "15:00",
+      "venue": "Seattle",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-33",
+      "matchNumber": 33,
+      "groupId": "group-e",
+      "homeTeamId": "team-ger",
+      "awayTeamId": "team-civ",
+      "date": "2026-06-20",
+      "kickoffTimeET": "16:00",
+      "venue": "Toronto",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-34",
+      "matchNumber": 34,
+      "groupId": "group-e",
+      "homeTeamId": "team-ecu",
+      "awayTeamId": "team-cuw",
+      "date": "2026-06-20",
+      "kickoffTimeET": "20:00",
+      "venue": "Kansas City",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-35",
+      "matchNumber": 35,
+      "groupId": "group-f",
+      "homeTeamId": "team-ned",
+      "awayTeamId": "team-swe",
+      "date": "2026-06-20",
+      "kickoffTimeET": "13:00",
+      "venue": "Houston",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-36",
+      "matchNumber": 36,
+      "groupId": "group-f",
+      "homeTeamId": "team-tun",
+      "awayTeamId": "team-jpn",
+      "date": "2026-06-20",
+      "kickoffTimeET": "00:00",
+      "venue": "Monterrey",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-37",
+      "matchNumber": 37,
+      "groupId": "group-h",
+      "homeTeamId": "team-uru",
+      "awayTeamId": "team-cpv",
+      "date": "2026-06-21",
+      "kickoffTimeET": "18:00",
+      "venue": "Miami",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-38",
+      "matchNumber": 38,
+      "groupId": "group-h",
+      "homeTeamId": "team-esp",
+      "awayTeamId": "team-ksa",
+      "date": "2026-06-21",
+      "kickoffTimeET": "12:00",
+      "venue": "Atlanta",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-39",
+      "matchNumber": 39,
+      "groupId": "group-g",
+      "homeTeamId": "team-bel",
+      "awayTeamId": "team-irn",
+      "date": "2026-06-21",
+      "kickoffTimeET": "15:00",
+      "venue": "Los Ángeles",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-40",
+      "matchNumber": 40,
+      "groupId": "group-g",
+      "homeTeamId": "team-nzl",
+      "awayTeamId": "team-egy",
+      "date": "2026-06-21",
+      "kickoffTimeET": "21:00",
+      "venue": "Vancouver",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-41",
+      "matchNumber": 41,
+      "groupId": "group-i",
+      "homeTeamId": "team-nor",
+      "awayTeamId": "team-sen",
+      "date": "2026-06-22",
+      "kickoffTimeET": "20:00",
+      "venue": "Nueva York / Nueva Jersey",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-42",
+      "matchNumber": 42,
+      "groupId": "group-i",
+      "homeTeamId": "team-fra",
+      "awayTeamId": "team-irq",
+      "date": "2026-06-22",
+      "kickoffTimeET": "17:00",
+      "venue": "Filadelfia",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-43",
+      "matchNumber": 43,
+      "groupId": "group-j",
+      "homeTeamId": "team-arg",
+      "awayTeamId": "team-aut",
+      "date": "2026-06-22",
+      "kickoffTimeET": "13:00",
+      "venue": "Dallas",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-44",
+      "matchNumber": 44,
+      "groupId": "group-j",
+      "homeTeamId": "team-jor",
+      "awayTeamId": "team-alg",
+      "date": "2026-06-22",
+      "kickoffTimeET": "23:00",
+      "venue": "Área de la Bahía de San Francisco",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-45",
+      "matchNumber": 45,
+      "groupId": "group-l",
+      "homeTeamId": "team-eng",
+      "awayTeamId": "team-gha",
+      "date": "2026-06-23",
+      "kickoffTimeET": "16:00",
+      "venue": "Boston",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-46",
+      "matchNumber": 46,
+      "groupId": "group-l",
+      "homeTeamId": "team-pan",
+      "awayTeamId": "team-cro",
+      "date": "2026-06-23",
+      "kickoffTimeET": "19:00",
+      "venue": "Toronto",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-47",
+      "matchNumber": 47,
+      "groupId": "group-k",
+      "homeTeamId": "team-por",
+      "awayTeamId": "team-uzb",
+      "date": "2026-06-23",
+      "kickoffTimeET": "13:00",
+      "venue": "Houston",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-48",
+      "matchNumber": 48,
+      "groupId": "group-k",
+      "homeTeamId": "team-col",
+      "awayTeamId": "team-cod",
+      "date": "2026-06-23",
+      "kickoffTimeET": "22:00",
+      "venue": "Guadalajara",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-49",
+      "matchNumber": 49,
+      "groupId": "group-c",
+      "homeTeamId": "team-sco",
+      "awayTeamId": "team-bra",
+      "date": "2026-06-24",
+      "kickoffTimeET": "18:00",
+      "venue": "Miami",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-50",
+      "matchNumber": 50,
+      "groupId": "group-c",
+      "homeTeamId": "team-mar",
+      "awayTeamId": "team-hai",
+      "date": "2026-06-24",
+      "kickoffTimeET": "18:00",
+      "venue": "Atlanta",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-51",
+      "matchNumber": 51,
+      "groupId": "group-b",
+      "homeTeamId": "team-sui",
+      "awayTeamId": "team-can",
+      "date": "2026-06-24",
+      "kickoffTimeET": "15:00",
+      "venue": "Vancouver",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-52",
+      "matchNumber": 52,
+      "groupId": "group-b",
+      "homeTeamId": "team-bih",
+      "awayTeamId": "team-qat",
+      "date": "2026-06-24",
+      "kickoffTimeET": "15:00",
+      "venue": "Seattle",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-53",
+      "matchNumber": 53,
+      "groupId": "group-a",
+      "homeTeamId": "team-cze",
+      "awayTeamId": "team-mex",
+      "date": "2026-06-24",
+      "kickoffTimeET": "21:00",
+      "venue": "Ciudad de México",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-54",
+      "matchNumber": 54,
+      "groupId": "group-a",
+      "homeTeamId": "team-rsa",
+      "awayTeamId": "team-kor",
+      "date": "2026-06-24",
+      "kickoffTimeET": "21:00",
+      "venue": "Monterrey",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-55",
+      "matchNumber": 55,
+      "groupId": "group-e",
+      "homeTeamId": "team-cuw",
+      "awayTeamId": "team-civ",
+      "date": "2026-06-25",
+      "kickoffTimeET": "16:00",
+      "venue": "Filadelfia",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-56",
+      "matchNumber": 56,
+      "groupId": "group-e",
+      "homeTeamId": "team-ecu",
+      "awayTeamId": "team-ger",
+      "date": "2026-06-25",
+      "kickoffTimeET": "16:00",
+      "venue": "Nueva York / Nueva Jersey",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-57",
+      "matchNumber": 57,
+      "groupId": "group-f",
+      "homeTeamId": "team-jpn",
+      "awayTeamId": "team-swe",
+      "date": "2026-06-25",
+      "kickoffTimeET": "19:00",
+      "venue": "Dallas",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-58",
+      "matchNumber": 58,
+      "groupId": "group-f",
+      "homeTeamId": "team-tun",
+      "awayTeamId": "team-ned",
+      "date": "2026-06-25",
+      "kickoffTimeET": "19:00",
+      "venue": "Kansas City",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-59",
+      "matchNumber": 59,
+      "groupId": "group-d",
+      "homeTeamId": "team-tur",
+      "awayTeamId": "team-usa",
+      "date": "2026-06-25",
+      "kickoffTimeET": "22:00",
+      "venue": "Los Ángeles",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-60",
+      "matchNumber": 60,
+      "groupId": "group-d",
+      "homeTeamId": "team-par",
+      "awayTeamId": "team-aus",
+      "date": "2026-06-25",
+      "kickoffTimeET": "22:00",
+      "venue": "Área de la Bahía de San Francisco",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-61",
+      "matchNumber": 61,
+      "groupId": "group-i",
+      "homeTeamId": "team-nor",
+      "awayTeamId": "team-fra",
+      "date": "2026-06-26",
+      "kickoffTimeET": "15:00",
+      "venue": "Boston",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-62",
+      "matchNumber": 62,
+      "groupId": "group-i",
+      "homeTeamId": "team-sen",
+      "awayTeamId": "team-irq",
+      "date": "2026-06-26",
+      "kickoffTimeET": "15:00",
+      "venue": "Toronto",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-63",
+      "matchNumber": 63,
+      "groupId": "group-g",
+      "homeTeamId": "team-egy",
+      "awayTeamId": "team-irn",
+      "date": "2026-06-26",
+      "kickoffTimeET": "23:00",
+      "venue": "Seattle",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-64",
+      "matchNumber": 64,
+      "groupId": "group-g",
+      "homeTeamId": "team-nzl",
+      "awayTeamId": "team-bel",
+      "date": "2026-06-26",
+      "kickoffTimeET": "23:00",
+      "venue": "Vancouver",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-65",
+      "matchNumber": 65,
+      "groupId": "group-h",
+      "homeTeamId": "team-cpv",
+      "awayTeamId": "team-ksa",
+      "date": "2026-06-26",
+      "kickoffTimeET": "20:00",
+      "venue": "Houston",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-66",
+      "matchNumber": 66,
+      "groupId": "group-h",
+      "homeTeamId": "team-uru",
+      "awayTeamId": "team-esp",
+      "date": "2026-06-26",
+      "kickoffTimeET": "20:00",
+      "venue": "Guadalajara",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-67",
+      "matchNumber": 67,
+      "groupId": "group-l",
+      "homeTeamId": "team-pan",
+      "awayTeamId": "team-eng",
+      "date": "2026-06-27",
+      "kickoffTimeET": "17:00",
+      "venue": "Nueva York / Nueva Jersey",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-68",
+      "matchNumber": 68,
+      "groupId": "group-l",
+      "homeTeamId": "team-cro",
+      "awayTeamId": "team-gha",
+      "date": "2026-06-27",
+      "kickoffTimeET": "17:00",
+      "venue": "Filadelfia",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-69",
+      "matchNumber": 69,
+      "groupId": "group-j",
+      "homeTeamId": "team-alg",
+      "awayTeamId": "team-aut",
+      "date": "2026-06-27",
+      "kickoffTimeET": "22:00",
+      "venue": "Kansas City",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-70",
+      "matchNumber": 70,
+      "groupId": "group-j",
+      "homeTeamId": "team-jor",
+      "awayTeamId": "team-arg",
+      "date": "2026-06-27",
+      "kickoffTimeET": "22:00",
+      "venue": "Dallas",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-71",
+      "matchNumber": 71,
+      "groupId": "group-k",
+      "homeTeamId": "team-col",
+      "awayTeamId": "team-por",
+      "date": "2026-06-27",
+      "kickoffTimeET": "19:30",
+      "venue": "Miami",
+      "status": "scheduled"
+    },
+    {
+      "id": "match-72",
+      "matchNumber": 72,
+      "groupId": "group-k",
+      "homeTeamId": "team-cod",
+      "awayTeamId": "team-uzb",
+      "date": "2026-06-27",
+      "kickoffTimeET": "19:30",
+      "venue": "Atlanta",
+      "status": "scheduled"
+    }
   ],
   "goals": [
-    { "id": "goal-001", "matchId": "match-01", "teamId": "team-mex", "playerId": "player-mex-09", "minute": 18, "type": "Jugada" },
-    { "id": "goal-002", "matchId": "match-02", "teamId": "team-kor", "playerId": "player-kor-10", "minute": 34, "type": "Tiro libre" },
-    { "id": "goal-003", "matchId": "match-03", "teamId": "team-can", "playerId": "player-can-11", "minute": 51, "type": "Jugada" },
-    { "id": "goal-004", "matchId": "match-04", "teamId": "team-usa", "playerId": "player-usa-09", "minute": 63, "type": "Penal" },
-    { "id": "goal-005", "matchId": "match-05", "teamId": "team-hai", "playerId": "player-hai-07", "minute": 27, "type": "Jugada" },
-    { "id": "goal-006", "matchId": "match-07", "teamId": "team-bra", "playerId": "player-bra-10", "minute": 39, "type": "Jugada" },
-    { "id": "goal-007", "matchId": "match-08", "teamId": "team-qat", "playerId": "player-qat-11", "minute": 72, "type": "Cabeza" },
-    { "id": "goal-008", "matchId": "match-09", "teamId": "team-civ", "playerId": "player-civ-09", "minute": 44, "type": "Jugada" },
-    { "id": "goal-009", "matchId": "match-10", "teamId": "team-ger", "playerId": "player-ger-10", "minute": 58, "type": "Tiro libre" },
-    { "id": "goal-010", "matchId": "match-11", "teamId": "team-ned", "playerId": "player-ned-11", "minute": 81, "type": "Jugada" }
+    {
+      "id": "goal-001",
+      "matchId": "match-01",
+      "teamId": "team-mex",
+      "playerId": "player-mex-09",
+      "minute": 18,
+      "type": "Jugada"
+    },
+    {
+      "id": "goal-003",
+      "matchId": "match-03",
+      "teamId": "team-can",
+      "playerId": "player-can-11",
+      "minute": 51,
+      "type": "Jugada"
+    },
+    {
+      "id": "goal-004",
+      "matchId": "match-04",
+      "teamId": "team-usa",
+      "playerId": "player-usa-09",
+      "minute": 63,
+      "type": "Penal"
+    },
+    {
+      "id": "goal-005",
+      "matchId": "match-05",
+      "teamId": "team-hai",
+      "playerId": "player-hai-07",
+      "minute": 27,
+      "type": "Jugada"
+    },
+    {
+      "id": "goal-006",
+      "matchId": "match-07",
+      "teamId": "team-bra",
+      "playerId": "player-bra-10",
+      "minute": 39,
+      "type": "Jugada"
+    },
+    {
+      "id": "goal-007",
+      "matchId": "match-08",
+      "teamId": "team-qat",
+      "playerId": "player-qat-11",
+      "minute": 72,
+      "type": "Cabeza"
+    },
+    {
+      "id": "goal-008",
+      "matchId": "match-09",
+      "teamId": "team-civ",
+      "playerId": "player-civ-09",
+      "minute": 44,
+      "type": "Jugada"
+    },
+    {
+      "id": "goal-009",
+      "matchId": "match-10",
+      "teamId": "team-ger",
+      "playerId": "player-ger-10",
+      "minute": 58,
+      "type": "Tiro libre"
+    },
+    {
+      "id": "goal-010",
+      "matchId": "match-11",
+      "teamId": "team-ned",
+      "playerId": "player-ned-11",
+      "minute": 81,
+      "type": "Jugada"
+    }
   ]
 }

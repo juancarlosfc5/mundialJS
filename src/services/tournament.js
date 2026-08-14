@@ -98,9 +98,10 @@ export function calculateTopScorers() {
 
   db.goals.forEach(g => {
     if (!tabla[g.playerId]) {
+      const player = db.players.find(p => p.id === g.playerId);
       tabla[g.playerId] = {
         playerId: g.playerId,
-        playerName: g.playerName,
+        playerName: g.playerName || player?.name || String(g.playerId),
         goals: 0,
         matches: new Set()
       };
@@ -114,6 +115,6 @@ export function calculateTopScorers() {
     .sort((a, b) => {
       if (b.goals !== a.goals) return b.goals - a.goals;
       if (a.matches !== b.matches) return a.matches - b.matches;
-      return a.playerName.localeCompare(b.playerName);
+      return (a.playerName || "").localeCompare(b.playerName || "");
     });
 }
