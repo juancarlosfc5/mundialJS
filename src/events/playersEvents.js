@@ -1,144 +1,151 @@
-import { createPlayer, deletePlayer } from '../services/playersService.js';
-import { createPlayerRow } from '../views/playersView.js';
+// src/events/players.events.js
+import { listPlayers, updatePlayer, deletePlayer } from "../services/players.js";
+import { renderPlayersView } from "../views/players.js";
+import { db } from "../database.js";
 
-// Grupo 3 - Manejadores de Eventos del Módulo de Jugadores
-
-// ==========================================
-// Funciones asignadas a Jose (Filtros y Consultas)
-// ==========================================
-// Jose implementará:
-// - handleTeamFilterChange (filtrado dinámico por equipo con evento change)
-// - handlePlayerRowHover (resaltado interactivo con mouseover y mouseout)
-// - setupPlayerFilterEvents (inicializador de eventos de consulta)
-
-
-// ==========================================
-// Funciones asignadas a Manuel (Mutaciones CRUD)
-// ==========================================
+// ─── ESTADO INTERNO DE LOS FILTROS ────────────────────────
+let currentTeamFilter = "";
+let currentPositionFilter = "";
+let currentSearchTerm = "";
 
 /**
- * Manejador del evento submit para el formulario de registro de jugadores.
- * @param {SubmitEvent} event - Evento de envío del formulario.
- * @param {HTMLFormElement} formElement - Elemento del formulario.
- * @param {HTMLTableSectionElement} tbodyElement - Elemento <tbody> donde se inserta la nueva fila.
- * @param {Map<string, string>} [teamsMap=new Map()] - Mapa de ID a Nombre de equipo.
+ * Filtra la lista de jugadores aplicando equipo, posición y búsqueda de forma combinada.
+ * Recibe el arreglo completo y retorna un subconjunto.
  */
-export const handleCreatePlayerSubmit = async (event, formElement, tbodyElement, teamsMap = new Map()) => {
-  event.preventDefault();
+const applyFilters = (players) => {
+  let filtered = [...players];
 
-  const formData = new FormData(formElement);
-  const teamId = formData.get('teamId')?.toString().trim();
-  const name = formData.get('name')?.toString().trim();
-  const number = Number(formData.get('number'));
-  const position = formData.get('position')?.toString().trim();
-  const age = Number(formData.get('age'));
+  if (currentTeamFilter) {
+    filtered = filtered.filter(p => p.teamId === currentTeamFilter);
+  }
 
-  try {
-    // 1. Ejecutar la mutación lógica mediante el servicio
-    const newPlayer = await createPlayer({
-      teamId,
-      name,
-      number,
-      position,
-      age,
-      active: true,
+  if (currentPositionFilter) {
+    filtered = filtered.filter(p => p.position === currentPositionFilter);
+  }
+
+  if (currentSearchTerm) {
+    const term = currentSearchTerm.toLowerCase();
+    filtered = filtered.filter(p =>
+      p.name.toLowerCase().includes(term) ||
+      String(p.number).includes(term)
+    );
+  }
+
+  return filtered;
+};
+
+/**
+ * Recarga los jugadores desde el servicio, aplica los filtros vigentes
+ * y vuelve a pintar la tabla.
+ */
+const refreshFilteredView = async () => {
+  const allPlayers = await listPlayers();
+  const filtered = applyFilters(allPlayers);
+  renderPlayersView(filtered);
+};
+
+/**
+ * Puebla dinámicamente el select de equipos con los datos de la BD.
+ */
+const populateTeamFilter = () => {
+  const teamSelect = document.getElementById("player-team-filter");
+  if (!teamSelect) return;
+
+  // Conservar solo la primera opción ("Todos los equipos")
+  while (teamSelect.options.length > 1) {
+    teamSelect.remove(1);
+  }
+
+  db.teams.forEach(team => {
+    const option = document.createElement("option");
+    option.value = team.id;
+    option.textContent = team.name;
+    teamSelect.appendChild(option);
+  });
+};
+
+// ─── CONFIGURACIÓN DE EVENTOS (MANUEL) ───────────────────
+
+/**
+ * Configura los eventos del módulo de Jugadores asignados a Manuel:
+ * - change (filtros combinados)
+ * - keydown (buscador)
+ * - click (delegación en la tabla para editar, activar/desactivar y eliminar)
+ */
+export const setupPlayerEvents = (renderCallback) => {
+  // === Filtros (change) ===
+  const teamFilterSelect = document.getElementById("player-team-filter");
+  const positionFilterSelect = document.getElementById("player-position-filter");
+  const searchInput = document.getElementById("player-search");
+
+  // Poblar el select de equipos al iniciar
+  populateTeamFilter();
+
+  if (teamFilterSelect) {
+    teamFilterSelect.addEventListener("change", async (event) => {
+      currentTeamFilter = event.target.value;
+      await refreshFilteredView();
     });
+  }
 
-    // 2. Resolver el nombre del equipo para la vista
-    const teamName = teamsMap.get ? teamsMap.get(teamId) : (teamsMap[teamId] || teamId);
+  if (positionFilterSelect) {
+    positionFilterSelect.addEventListener("change", async (event) => {
+      currentPositionFilter = event.target.value;
+      await refreshFilteredView();
+    });
+  }
 
-    // 3. Crear e insertar la nueva fila en el DOM
-    const currentIndex = tbodyElement.querySelectorAll('tr.player-row').length;
-    const newRow = createPlayerRow(newPlayer, teamName, currentIndex);
-    tbodyElement.appendChild(newRow);
-
-    // 4. Animar la fila recién creada
-    newRow.animate(
-      [
-        { opacity: 0, transform: 'scale(0.95) translateY(10px)' },
-        { opacity: 1, transform: 'scale(1) translateY(0)' },
-      ],
-      {
-        duration: 300,
-        easing: 'ease-out',
-        fill: 'forwards',
+  // === Buscador (keydown) ===
+  if (searchInput) {
+    searchInput.addEventListener("keydown", async (event) => {
+      if (event.key === "Enter") {
+        currentSearchTerm = searchInput.value.trim();
+        await refreshFilteredView();
+      } else if (event.key === "Escape") {
+        currentSearchTerm = "";
+        searchInput.value = "";
+        await refreshFilteredView();
       }
-    );
-
-    // 5. Resetear el formulario tras la creación exitosa
-    formElement.reset();
-  } catch (error) {
-    console.error('Error al registrar jugador:', error.message);
-    alert(`Error: ${error.message}`);
+    });
   }
-};
 
-/**
- * Manejador de delegación de eventos click para la eliminación de jugadores.
- * @param {MouseEvent} event - Evento de click en el contenedor de la tabla.
- */
-export const handleDeletePlayerClick = async (event) => {
-  // Delegación de eventos usando closest para detectar el botón de eliminar
-  const deleteBtn = event.target.closest('.btn-delete-player');
-  if (!deleteBtn) return;
+  // === Interactividad de la Tabla (click por delegación) ===
+  const tableBody = document.getElementById("players-table-body");
 
-  const row = deleteBtn.closest('tr');
-  if (!row) return;
+  if (tableBody) {
+    tableBody.addEventListener("click", async (event) => {
+      const button = event.target.closest("[data-action]");
+      if (!button) return;
 
-  const playerId = row.getAttribute('data-player-id') || deleteBtn.getAttribute('data-player-id');
-  if (!playerId) return;
+      const action = button.getAttribute("data-action");
+      const playerId = button.getAttribute("data-id");
 
-  const confirmed = window.confirm('¿Está seguro de que desea eliminar este jugador?');
-  if (!confirmed) return;
+      try {
+        if (action === "edit") {
+          console.log(`Editar jugador: ${playerId}`);
+          // La carga del formulario la implementará José en su parte
+        }
 
-  try {
-    // 1. Ejecutar eliminación lógica mediante el servicio
-    await deletePlayer(playerId);
+        if (action === "toggle") {
+          // Buscar el estado actual del jugador en la BD
+          const player = db.players.find(p => p.id === playerId);
+          if (player) {
+            await updatePlayer(playerId, { active: !player.active });
+            await refreshFilteredView();
+          }
+        }
 
-    // 2. Animar la salida y remover el nodo del DOM
-    const animation = row.animate(
-      [
-        { opacity: 1, transform: 'translateX(0)' },
-        { opacity: 0, transform: 'translateX(-20px)' },
-      ],
-      {
-        duration: 250,
-        easing: 'ease-in',
-        fill: 'forwards',
+        if (action === "delete") {
+          const confirmed = confirm("¿Estás seguro de que deseas eliminar este jugador?");
+          if (confirmed) {
+            await deletePlayer(playerId);
+            await refreshFilteredView();
+          }
+        }
+      } catch (error) {
+        console.error(`Error en acción "${action}":`, error.message);
+        alert(error.message);
       }
-    );
-
-    animation.onfinish = () => {
-      row.remove();
-    };
-  } catch (error) {
-    console.error('Error al eliminar jugador:', error.message);
-    alert(`No fue posible eliminar el jugador: ${error.message}`);
-  }
-};
-
-/**
- * Registra los listeners de eventos para las mutaciones de jugadores.
- * @param {HTMLFormElement} formElement - Formulario de creación de jugador.
- * @param {HTMLElement} tableContainerElement - Contenedor de la tabla con delegación de eventos.
- * @param {HTMLTableSectionElement} tbodyElement - Cuerpo de la tabla.
- * @param {Map<string, string>} [teamsMap=new Map()] - Mapa de ID a Nombre de equipo.
- */
-export const setupPlayerMutationEvents = (
-  formElement,
-  tableContainerElement,
-  tbodyElement,
-  teamsMap = new Map()
-) => {
-  if (formElement) {
-    formElement.addEventListener('submit', (event) =>
-      handleCreatePlayerSubmit(event, formElement, tbodyElement, teamsMap)
-    );
-  }
-
-  if (tableContainerElement) {
-    tableContainerElement.addEventListener('click', (event) =>
-      handleDeletePlayerClick(event)
-    );
+    });
   }
 };

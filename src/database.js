@@ -1,10 +1,9 @@
-import initialData from './data/db.json';
+// src/database.js
+import data from "./data/db.json";
 
-// Estado en memoria de la base de datos para el torneo
-export const database = {
-  groups: [...initialData.groups.map(g => ({ ...g }))],
-  teams: [...initialData.teams.map(t => ({ ...t }))],
-  players: [...initialData.players.map(p => ({ ...p }))],
-  matches: [...initialData.matches.map(m => ({ ...m }))],
-  goals: [...initialData.goals.map(g => ({ ...g }))]
+export const db = {
+  goals: [...data.goals],
+  matches: [...data.matches],
+  teams: [...data.teams],
+  players: data.players.map(p => ({ ...p }))
 };

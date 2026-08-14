@@ -1,356 +1,172 @@
-// Grupo 3 - Componente Web nativo para la tarjeta de un jugador
-// Desarrollado por: Manuel
+// src/components/players/playerCard.js
 
-const template = document.createElement('template');
-template.innerHTML = `
+const playerCardTemplate = document.createElement("template");
+playerCardTemplate.innerHTML = `
   <style>
     :host {
-      display: block;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      box-sizing: border-box;
-    }
-
-    *, *::before, *::after {
-      box-sizing: inherit;
-    }
-
-    .card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      border: 1px solid #e2e8f0;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    }
-
-    .card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-
-    .dorsal {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      font-weight: 700;
-      font-size: 16px;
+      background-color: #011638;
       color: #ffffff;
-      background: #334155;
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
     }
 
-    .status-badge {
-      font-size: 12px;
-      font-weight: 600;
-      padding: 4px 8px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+    :host([active="false"]) {
+      opacity: 0.5;
+      filter: grayscale(80%);
     }
 
-    .status-active {
-      background: #dcfce7;
-      color: #15803d;
-    }
-
-    .status-inactive {
-      background: #fee2e2;
-      color: #b91c1c;
-    }
-
-    .player-name {
-      font-size: 18px;
-      font-weight: 700;
-      color: #0f172a;
-      margin: 0;
-    }
-
-    .player-team {
-      font-size: 14px;
-      color: #64748b;
-      margin: 0;
-      font-weight: 500;
-    }
-
-    .position-badge {
-      display: inline-block;
-      align-self: flex-start;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    /* Variaciones de estilo según la posición */
-    .pos-portero {
-      border-left: 4px solid #f59e0b;
-    }
-    .pos-portero .position-badge {
-      background: #fef3c7;
-      color: #b45309;
-    }
-    .pos-portero .dorsal {
-      background: #f59e0b;
-    }
-
-    .pos-defensa {
-      border-left: 4px solid #3b82f6;
-    }
-    .pos-defensa .position-badge {
-      background: #dbeafe;
-      color: #1d4ed8;
-    }
-    .pos-defensa .dorsal {
-      background: #3b82f6;
-    }
-
-    .pos-mediocampista {
-      border-left: 4px solid #10b981;
-    }
-    .pos-mediocampista .position-badge {
-      background: #d1fae5;
-      color: #047857;
-    }
-    .pos-mediocampista .dorsal {
-      background: #10b981;
-    }
-
-    .pos-delantero {
-      border-left: 4px solid #ef4444;
-    }
-    .pos-delantero .position-badge {
-      background: #fee2e2;
-      color: #b91c1c;
-    }
-    .pos-delantero .dorsal {
-      background: #ef4444;
-    }
-
-    /* Estado inactivo */
-    .card.inactive {
-      opacity: 0.65;
-      background: #f8fafc;
-    }
-
-    .card-actions {
+    .playerInfo {
       display: flex;
-      justify-content: flex-end;
-      gap: 8px;
-      margin-top: 8px;
-      padding-top: 10px;
-      border-top: 1px solid #f1f5f9;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .playerName {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .playerDetails {
+      font-size: 0.85rem;
+      color: #8b9bb4;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .positionBadge {
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    :host([position="Portero"]) .positionBadge { background-color: #f59e0b; }
+    :host([position="Defensa"]) .positionBadge { background-color: #3b82f6; }
+    :host([position="Mediocampista"]) .positionBadge { background-color: #10b981; }
+    :host([position="Delantero"]) .positionBadge { background-color: #ef4444; }
+
+    .cardActions {
+      display: flex;
+      gap: 0.5rem;
     }
 
     button {
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 600;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
       cursor: pointer;
-      border: none;
-      transition: background 0.15s ease;
+      font-size: 0.8rem;
+      transition: background 0.2s;
     }
 
-    .btn-edit {
-      background: #e0e7ff;
-      color: #3730a3;
-    }
-    .btn-edit:hover {
-      background: #c7d2fe;
+    button:hover {
+      background: rgba(255, 255, 255, 0.2);
     }
 
-    .btn-delete {
-      background: #fee2e2;
-      color: #991b1b;
-    }
-    .btn-delete:hover {
-      background: #fecaca;
+    button.btnDelete {
+      border-color: #ef4444;
+      color: #fca5a5;
     }
 
-    .btn-toggle {
-      background: #f1f5f9;
-      color: #475569;
-    }
-    .btn-toggle:hover {
-      background: #e2e8f0;
+    button.btnDelete:hover {
+      background: #ef4444;
+      color: white;
     }
   </style>
 
-  <div class="card">
-    <div class="card-header">
-      <span class="dorsal">#--</span>
-      <span class="status-badge status-active">Activo</span>
+  <div class="playerInfo">
+    <div class="playerName">
+      <span class="dorsalNumber">#<span id="numberSlot"></span></span> 
+      <span id="nameSlot"></span>
     </div>
-    <div class="card-body">
-      <h3 class="player-name">Nombre del Jugador</h3>
-      <p class="player-team">Equipo</p>
-      <span class="position-badge">Posición</span>
+    <div class="playerDetails">
+      <span id="teamSlot"></span>
+      <span id="positionSlot" class="positionBadge"></span>
     </div>
-    <div class="card-actions">
-      <button type="button" class="btn-toggle" title="Cambiar estado">Alternar</button>
-      <button type="button" class="btn-edit" title="Editar jugador">Editar</button>
-      <button type="button" class="btn-delete" title="Eliminar jugador">Eliminar</button>
-    </div>
+  </div>
+
+  <div class="cardActions">
+    <button id="btnEdit">Editar</button>
+    <button id="btnToggle">Desactivar</button>
+    <button id="btnDelete" class="btnDelete">Eliminar</button>
   </div>
 `;
 
 export class PlayerCard extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(playerCardTemplate.content.cloneNode(true));
 
-    // Referencias a los elementos del Shadow DOM
-    this._card = this.shadowRoot.querySelector('.card');
-    this._dorsal = this.shadowRoot.querySelector('.dorsal');
-    this._statusBadge = this.shadowRoot.querySelector('.status-badge');
-    this._playerName = this.shadowRoot.querySelector('.player-name');
-    this._playerTeam = this.shadowRoot.querySelector('.player-team');
-    this._positionBadge = this.shadowRoot.querySelector('.position-badge');
-    this._btnToggle = this.shadowRoot.querySelector('.btn-toggle');
-    this._btnEdit = this.shadowRoot.querySelector('.btn-edit');
-    this._btnDelete = this.shadowRoot.querySelector('.btn-delete');
-
-    // Handlers enlazados para listeners de ciclo de vida
-    this._onToggle = this._onToggle.bind(this);
-    this._onEdit = this._onEdit.bind(this);
-    this._onDelete = this._onDelete.bind(this);
+    this.cardElements = {
+      nameSlot: this.shadowRoot.getElementById("nameSlot"),
+      numberSlot: this.shadowRoot.getElementById("numberSlot"),
+      teamSlot: this.shadowRoot.getElementById("teamSlot"),
+      positionSlot: this.shadowRoot.getElementById("positionSlot"),
+      btnEdit: this.shadowRoot.getElementById("btnEdit"),
+      btnToggle: this.shadowRoot.getElementById("btnToggle"),
+      btnDelete: this.shadowRoot.getElementById("btnDelete")
+    };
   }
 
   static get observedAttributes() {
-    return ['name', 'number', 'position', 'team', 'active', 'player-id'];
+    return ["name", "number", "position", "team", "active"];
   }
 
   connectedCallback() {
-    this._btnToggle.addEventListener('click', this._onToggle);
-    this._btnEdit.addEventListener('click', this._onEdit);
-    this._btnDelete.addEventListener('click', this._onDelete);
+    console.log("Componente conectado");
+
+    this.cardElements.btnEdit.addEventListener("click", () => {
+      this.dispatchEvent(new CustomEvent("edit", { detail: { id: this.getAttribute("id") } }));
+    });
+
+    this.cardElements.btnToggle.addEventListener("click", () => {
+      this.dispatchEvent(new CustomEvent("toggle", { detail: { id: this.getAttribute("id") } }));
+    });
+
+    this.cardElements.btnDelete.addEventListener("click", () => {
+      this.dispatchEvent(new CustomEvent("delete", { detail: { id: this.getAttribute("id") } }));
+    });
   }
 
   disconnectedCallback() {
-    this._btnToggle.removeEventListener('click', this._onToggle);
-    this._btnEdit.removeEventListener('click', this._onEdit);
-    this._btnDelete.removeEventListener('click', this._onDelete);
+    console.log("Componente desconectado");
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue === newValue) return;
 
     switch (name) {
-      case 'name':
-        this._playerName.textContent = newValue || 'Sin nombre';
+      case "name":
+        if (this.cardElements.nameSlot) this.cardElements.nameSlot.textContent = newValue;
         break;
-
-      case 'number':
-        this._dorsal.textContent = newValue ? `#${newValue}` : '#--';
+      case "number":
+        if (this.cardElements.numberSlot) this.cardElements.numberSlot.textContent = newValue;
         break;
-
-      case 'team':
-        this._playerTeam.textContent = newValue || 'Sin equipo';
+      case "team":
+        if (this.cardElements.teamSlot) this.cardElements.teamSlot.textContent = newValue;
         break;
-
-      case 'position':
-        this._updatePosition(newValue);
+      case "position":
+        if (this.cardElements.positionSlot) this.cardElements.positionSlot.textContent = newValue;
         break;
-
-      case 'active':
-        this._updateActiveState(newValue);
+      case "active":
+        if (this.cardElements.btnToggle) {
+          this.cardElements.btnToggle.textContent = newValue === "true" ? "Desactivar" : "Activar";
+        }
         break;
     }
   }
-
-  _updatePosition(position) {
-    const pos = position || 'Delantero';
-    this._positionBadge.textContent = pos;
-
-    // Limpiar clases de posición anteriores
-    this._card.classList.remove(
-      'pos-portero',
-      'pos-defensa',
-      'pos-mediocampista',
-      'pos-delantero'
-    );
-
-    // Asignar clase de posición correspondiente
-    const cleanPos = pos.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    this._card.classList.add(`pos-${cleanPos}`);
-  }
-
-  _updateActiveState(activeAttr) {
-    const isActive = activeAttr !== 'false' && activeAttr !== false && activeAttr !== null;
-
-    if (isActive) {
-      this._card.classList.remove('inactive');
-      this._statusBadge.textContent = 'Activo';
-      this._statusBadge.classList.remove('status-inactive');
-      this._statusBadge.classList.add('status-active');
-    } else {
-      this._card.classList.add('inactive');
-      this._statusBadge.textContent = 'Inactivo';
-      this._statusBadge.classList.remove('status-active');
-      this._statusBadge.classList.add('status-inactive');
-    }
-  }
-
-  _onToggle() {
-    const currentActive = this.getAttribute('active') !== 'false';
-    const nextState = !currentActive;
-
-    this.dispatchEvent(
-      new CustomEvent('toggle-active', {
-        detail: {
-          playerId: this.getAttribute('player-id'),
-          active: nextState,
-        },
-        bubbles: true,
-        composed: true,
-      })
-    );
-  }
-
-  _onEdit() {
-    this.dispatchEvent(
-      new CustomEvent('edit-player', {
-        detail: {
-          playerId: this.getAttribute('player-id'),
-          name: this.getAttribute('name'),
-          number: Number(this.getAttribute('number')),
-          position: this.getAttribute('position'),
-          team: this.getAttribute('team'),
-        },
-        bubbles: true,
-        composed: true,
-      })
-    );
-  }
-
-  _onDelete() {
-    this.dispatchEvent(
-      new CustomEvent('delete-player', {
-        detail: {
-          playerId: this.getAttribute('player-id'),
-        },
-        bubbles: true,
-        composed: true,
-      })
-    );
-  }
 }
 
-// Registro del Custom Element
-if (!customElements.get('player-card')) {
-  customElements.define('player-card', PlayerCard);
-}
+customElements.define("player-card", PlayerCard);

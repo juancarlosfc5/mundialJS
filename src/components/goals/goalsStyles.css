@@ -1,0 +1,253 @@
+/* src/components/goals/goalsStyles.css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+goals-manager {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #082b4c;
+}
+
+.goals-app {
+  min-height: 100vh;
+  background: linear-gradient(#eef3fb 0 12.5rem, #fff 12.5rem);
+}
+
+.goals-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1.5rem 7% 0.85rem;
+  border-bottom: 1px solid #c7d5e6;
+  background: #005a9c;
+  color: #fff;
+}
+
+.goals-header h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.message {
+  margin: 0.5rem 7%;
+  padding: 0.85rem 1rem;
+  border-left: 0.3rem solid #138a4a;
+  color: #0c6031;
+  background: #e8f8ee;
+  display: none;
+}
+
+.message:not(:empty) {
+  display: block;
+}
+
+.message--error {
+  border-left-color: #c72035;
+  color: #991b2d;
+  background: #fff0f2;
+}
+
+.goals-form {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.5rem 7%;
+  background: #fff;
+  border-bottom: 1px solid #c7d5e6;
+}
+
+.goals-form h3 {
+  font-size: 1.1rem;
+  color: #005a9c;
+}
+
+.goals-form select,
+.goals-form input[type="number"] {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #afc1d2;
+  color: #082b4c;
+  font: inherit;
+  background: #fff;
+}
+
+.goals-form select:focus,
+.goals-form input:focus {
+  outline: 2px solid #74b8e7;
+  border-color: #0062a9;
+}
+
+.goals-form-actions {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.goals-form-actions button {
+  padding: 0.75rem 1.25rem;
+  border: 0;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  background: #0062a9;
+}
+
+.goals-form-actions button:hover {
+  background: #004b81;
+}
+
+.goals-form-actions button[type="button"] {
+  background: #637c93;
+}
+
+.goals-form-actions button[type="button"]:hover {
+  background: #4a5e6e;
+}
+
+.goals-timeline-section,
+.goals-scorers-section {
+  padding: 1.5rem 7%;
+}
+
+.goals-timeline-section h3,
+.goals-scorers-section h3 {
+  font-size: 1.1rem;
+  color: #005a9c;
+  margin-bottom: 1rem;
+}
+
+.empty-state {
+  padding: 2rem;
+  text-align: center;
+  color: #526b82;
+}
+
+.timeline {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.summary {
+  margin-top: 1rem;
+  color: #526b82;
+  font-size: 0.9rem;
+}
+
+goal-item {
+  display: block;
+}
+
+.goal-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-top: 0.3rem solid #0062a9;
+  background: #fff;
+  box-shadow: 0 4px 12px rgb(1 39 74 / 8%);
+}
+
+.goal-item--highlighted {
+  background: #eef3fb;
+}
+
+.goal-minute {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #0062a9;
+  min-width: 3rem;
+  text-align: center;
+}
+
+.goal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.goal-player {
+  font-size: 1rem;
+  color: #082b4c;
+}
+
+.goal-team,
+.goal-match,
+.goal-type {
+  font-size: 0.82rem;
+  color: #526b82;
+}
+
+.goal-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.goal-actions button {
+  display: inline-grid;
+  width: 2.2rem;
+  height: 2.2rem;
+  place-items: center;
+  padding: 0;
+  border: 1px solid #0062a9;
+  border-radius: 50%;
+  color: #0062a9;
+  font: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #fff;
+}
+
+.goal-actions button:hover {
+  color: #fff;
+  background: #0062a9;
+}
+
+#scorers-search {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #afc1d2;
+  border-radius: 2rem;
+  color: #082b4c;
+  font: inherit;
+  background: #fff;
+  margin-bottom: 1rem;
+}
+
+#scorers-search:focus {
+  outline: 2px solid #74b8e7;
+  border-color: #0062a9;
+}
+
+.scorers-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.scorers-table th,
+.scorers-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e1e9f1;
+}
+
+.scorers-table th {
+  background: #005a9c;
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+.scorers-table tr.top-scorer {
+  background: #eef3fb;
+  font-weight: 700;
+}
+
+.scorers-table tr:hover {
+  background: #f5f8fc;
+}

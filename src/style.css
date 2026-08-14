@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+  /* Paleta inspirada en FIFA.com (Modo oscuro, neon y azules intensos) */
+  --fifa-dark: #000c1e;
+  --fifa-panel: #011638;
+  --fifa-blue: #005ce6;
+  --fifa-cyan: #00d2ff;
+  --fifa-neon: #00ff85;
+  --fifa-text: #ffffff;
+  --fifa-text-muted: #8b9bb4;
+  --fifa-border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  background-color: var(--fifa-dark);
+  color: var(--fifa-text);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Container de la tabla */
+.players-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0 8px; /* Espacio entre filas */
+}
+
+.players-container th {
+  text-align: left;
+  padding: 1rem;
+  color: var(--fifa-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  border-bottom: 2px solid var(--fifa-blue);
+}
+
+/* Filas de Jugadores */
+.player-row {
+  background-color: var(--fifa-panel);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.player-row:hover {
+  background-color: #022359;
+  transform: scale(1.01) translateX(4px);
+  box-shadow: -4px 0 0 var(--fifa-cyan), 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.player-row td {
+  padding: 1rem;
+  border-top: 1px solid var(--fifa-border);
+  border-bottom: 1px solid var(--fifa-border);
+}
+
+.player-row td:first-child {
+  border-left: 1px solid var(--fifa-border);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.player-row td:last-child {
+  border-right: 1px solid var(--fifa-border);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Dorsal destacado */
+.dorsal-number {
+  font-weight: 800;
+  color: var(--fifa-text);
+  font-size: 1.2rem;
+}
+
+/* Badges de Posición */
+.position-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  min-width: 120px;
+}
+
+/* Colores por Posición (Requerimiento 2) */
+.pos-arquero .position-badge {
+  background-color: #ff9800;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 152, 0, 0.3);
+}
+
+.pos-defensa .position-badge {
+  background-color: var(--fifa-blue);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 92, 230, 0.3);
+}
+
+.pos-mediocampista .position-badge {
+  background-color: var(--fifa-cyan);
+  color: var(--fifa-dark);
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+}
+
+.pos-delantero .position-badge {
+  background-color: var(--fifa-neon);
+  color: var(--fifa-dark);
+  box-shadow: 0 0 10px rgba(0, 255, 133, 0.3);
+}
