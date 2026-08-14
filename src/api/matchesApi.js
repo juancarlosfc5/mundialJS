@@ -27,6 +27,34 @@ const getMatches = async () => {
   }
 };
 
+// GET: obtiene los equipos para mostrar su nombre en cada partido.
+const getTeams = async () => {
+  try {
+    const respuesta = await fetch(`${URL_API}/teams`);
+    if (respuesta.status === 200) {
+      console.log('HTTP 200: los equipos fueron consultados correctamente.');
+      return await respuesta.json();
+    }
+    console.log(`HTTP ${respuesta.status}: no fue posible consultar los equipos.`);
+  } catch (error) {
+    console.error('Error en la solicitud GET de equipos:', error.message);
+  }
+};
+
+// GET: obtiene los grupos para mostrar su nombre en cada partido.
+const getGroups = async () => {
+  try {
+    const respuesta = await fetch(`${URL_API}/groups`);
+    if (respuesta.status === 200) {
+      console.log('HTTP 200: los grupos fueron consultados correctamente.');
+      return await respuesta.json();
+    }
+    console.log(`HTTP ${respuesta.status}: no fue posible consultar los grupos.`);
+  } catch (error) {
+    console.error('Error en la solicitud GET de grupos:', error.message);
+  }
+};
+
 // POST: crea un nuevo partido.
 const postMatch = async (datos) => {
   try {
@@ -126,6 +154,8 @@ const deleteMatch = async (id) => {
 
 export {
   getMatches,
+  getTeams,
+  getGroups,
   postMatch,
   patchMatch,
   putMatch,
